@@ -29,12 +29,10 @@ export default function Header() {
   const menuItems = [
     "Profile",
     "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
+    "About",
+    "Deals",
+    "Contacts",
     "My Settings",
-    "Team Settings",
     "Help & Feedback",
     "Log Out",
   ];
@@ -196,12 +194,10 @@ export default function Header() {
                   gautamloonaich5822@gmail.com
                 </p>
               </DropdownItem>
-              <DropdownItem key="settings">My Settings</DropdownItem>
-              <DropdownItem key="team_settings">Team Settings</DropdownItem>
-              <DropdownItem key="analytics">Analytics</DropdownItem>
-              <DropdownItem key="system">System</DropdownItem>
-              <DropdownItem key="configurations">Configurations</DropdownItem>
-              <DropdownItem key="help_and_feedback">
+              <DropdownItem color="primary" key="settings">My Settings</DropdownItem>
+              <DropdownItem color="primary" key="team_settings">Team Settings</DropdownItem>
+              <DropdownItem color="primary" key="system">Contacts</DropdownItem>
+              <DropdownItem color="primary" key="help_and_feedback">
                 Help & Feedback
               </DropdownItem>
               <DropdownItem

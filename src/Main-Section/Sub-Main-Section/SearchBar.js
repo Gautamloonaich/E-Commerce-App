@@ -1,5 +1,5 @@
 "use client";
-import { Button, Input, Textarea } from "@heroui/react";
+import { Button, Input } from "@heroui/react";
 import { IoSearch } from "react-icons/io5";
 import { FaFilter } from "react-icons/fa6";
 
@@ -14,24 +14,26 @@ export default function SearchBar() {
           <p className="text-xl mb-2rem">
             Discover amazing products at unbeatable prices
           </p>
-          <div className=" w-full flex justify-center items-center flex-wrap   ">
-            <Textarea
-              maxRows={1}
-              minRows={1}
+          <div className="w-full  sm:max-w-[380px] md:max-w-[530px] lg:max-w-[700px] flex justify-center items-center flex-wrap   ">
+            <Input
               radius="full"
               size="lg"
               variant=""
               placeholder="Search for products,brands,categories...."
+              classNames={{
+                mainWrapper: "w-full flex item-center justify-center",
+                inputWrapper: "h-[60px]",
+              }}
               endContent={
                 <Button
                   radius="full"
                   size="sm"
-                  className=" bg-[rgb(79,70,229)] mr-[-12px] min-w-[50px] md:min-w-[58px] mb-0.5 "
+                  className=" bg-[rgb(79,70,229)] mr-[-6px] min-w-[50px] md:min-w-[58px]  "
                 >
                   {<IoSearch className="font-bold  text-white" size={18} />}
                 </Button>
               }
-              className="rounded-4xl flex justify-center items-center bg-white ring-3 ring-transparent focus-within:ring-purple-400 text-black max-w-[400px] md:max-w-[530px] lg:max-w-[672px] pt-1.5  border-0 "
+              className="rounded-4xl flex justify-between items-center bg-white ring-3 ring-transparent focus-within:ring-purple-400 text-black  border-0 "
             />
           </div>
         </div>
