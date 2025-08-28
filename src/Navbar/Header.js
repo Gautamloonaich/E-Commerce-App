@@ -108,8 +108,7 @@ export default function Header() {
               <DropdownItem
                 key="production_ready"
                 description="Details about ShopHub"
-              >
-                About
+              ><Link href="/aboutSection"> About</Link>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -137,7 +136,7 @@ export default function Header() {
             <Link
               className="text-[rgba(55,65,81,1 )] text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600"
               color="foreground"
-              href="#"
+              href="/aboutSection"
             >
               About
             </Link>
