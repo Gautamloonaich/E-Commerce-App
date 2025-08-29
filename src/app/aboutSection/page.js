@@ -1,24 +1,19 @@
 import Image from "next/image";
 import AboutFooter from "./aboutfooter";
-import AboutNavbar from "./aboutNavbaar";
 import image from "../../../public/companyimage.jpg";
 import { FaLightbulb } from "react-icons/fa";
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaStar } from "react-icons/fa6";
-import person1 from "../../../public/person-01.svg"
-import person2 from "../../../public/person-02.svg"
-import person3 from "../../../public/person-03.svg"
-import person4 from "../../../public/person-04.svg"
+import person1 from "../../../public/person-01.svg";
+import person2 from "../../../public/person-02.svg";
+import person3 from "../../../public/person-03.svg";
+import person4 from "../../../public/person-04.svg";
 import { RxLinkedinLogo } from "react-icons/rx";
 import { FaGithub } from "react-icons/fa6";
-
-
-
 
 export default function aboutPage() {
   return (
     <>
-      <AboutNavbar />
       <div className="py-[80px] flex item-center bg-neutral-50  h-[400px]    justify-center ">
         <div className=" text-center   px-4 sm:px-6 m-auto">
           <h1 className="text-4xl  font-semibold md:text-6xl text-neutral-900 mb-6">
@@ -30,7 +25,7 @@ export default function aboutPage() {
           </p>
         </div>
       </div>
-   
+
       <div>
         <div className="py-16 flex justify-center">
           <div className="   gap-5 px-4 max-w-7xl  sm:px-6 lg:px-8 grid items-center md:grid-cols-2  ">
@@ -120,75 +115,106 @@ export default function aboutPage() {
 
       <div className="flex justify-center items-center">
         <div className="py-16 flex-col  justify-center  items-center w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-[30px] text-center font-medium mb-4">Meet Our Team</h1>
+          <h1 className="text-[30px] text-center font-medium mb-4">
+            Meet Our Team
+          </h1>
           <div className="flex items-center justify-center mb-12 ">
-           <p className=" text-[16px] text-neutral-700 justify-center flex text-center max-w-[662px]">The passionate individuals behind our success, each bringing unique expertise and perspective.</p>
+            <p className=" text-[16px] text-neutral-700 justify-center flex text-center max-w-[662px]">
+              The passionate individuals behind our success, each bringing
+              unique expertise and perspective.
+            </p>
           </div>
           <div className=" flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 space-y-8 md-space-y-0">
             <div className="flex flex-col justify-center m-0 items-center  w-full">
-              <Image alt="Avatar"  width={130} src={person1} className="mb-4"/>
-              <h1 className="text-xl text-center text-neutral-900 font-normal">Sarah Johnson</h1>
+              <Image alt="Avatar" width={130} src={person1} className="mb-4" />
+              <h1 className="text-xl text-center text-neutral-900 font-normal">
+                Sarah Johnson
+              </h1>
               <p className="text-neutral-600 text-center">CEO & Founder</p>
               <div className="flex justify-center gap-2 mt-3 items-center">
-                <RxLinkedinLogo size={20} className="text-neutral-500 hover:text-neutral-700"/>
-                <FaGithub size={20} className="text-neutral-500 hover:text-neutral-700"/>
-
+                <RxLinkedinLogo
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
+                <FaGithub
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
               </div>
             </div>
             <div className="flex flex-col justify-center m-0 items-center  w-full">
-               <Image alt="Avatar"  width={130} src={person2} className="mb-4"/>
-              <h1 className="text-xl text-center text-neutral-900 font-normal">Michael Chen</h1>
+              <Image alt="Avatar" width={130} src={person2} className="mb-4" />
+              <h1 className="text-xl text-center text-neutral-900 font-normal">
+                Michael Chen
+              </h1>
               <p className="text-neutral-600 text-center">CTO</p>
               <div className="flex justify-center mt-3 gap-2 items-center">
-                <RxLinkedinLogo size={20} className="text-neutral-500 hover:text-neutral-700"/>
-                <FaGithub size={20} className="text-neutral-500 hover:text-neutral-700"/>
-
+                <RxLinkedinLogo
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
+                <FaGithub
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
               </div>
             </div>
             <div className="flex flex-col justify-center m-0 items-center  w-full">
-               <Image  alt="Avatar" width={130} src={person3} className="mb-4"/>
-              <h1 className="text-xl text-center text-neutral-900 font-normal">Emily Rodriguez</h1>
+              <Image alt="Avatar" width={130} src={person3} className="mb-4" />
+              <h1 className="text-xl text-center text-neutral-900 font-normal">
+                Emily Rodriguez
+              </h1>
               <p className="text-neutral-600 text-center">Head of Design</p>
               <div className="flex justify-center mt-3 gap-2 items-center">
-                 <RxLinkedinLogo size={20} className="text-neutral-500 hover:text-neutral-700"/>
-                <FaGithub size={20} className="text-neutral-500 hover:text-neutral-700"/>
-
+                <RxLinkedinLogo
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
+                <FaGithub
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
               </div>
-              
             </div>
-             <div className="flex flex-col justify-center m-0 items-center  w-full">
-               <Image  alt="Avatar" width={130} src={person4} className="mb-4"/>
-              <h1 className="text-xl text-center text-neutral-900 font-normal">David Kim</h1>
+            <div className="flex flex-col justify-center m-0 items-center  w-full">
+              <Image alt="Avatar" width={130} src={person4} className="mb-4" />
+              <h1 className="text-xl text-center text-neutral-900 font-normal">
+                David Kim
+              </h1>
               <p className="text-neutral-600 text-center">Lead Developer</p>
               <div className="flex justify-center mt-3 gap-2 items-center">
-                 <RxLinkedinLogo size={20} className="text-neutral-500 hover:text-neutral-700"/>
-                <FaGithub size={20} className="text-neutral-500 hover:text-neutral-700"/>
-
+                <RxLinkedinLogo
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
+                <FaGithub
+                  size={20}
+                  className="text-neutral-500 hover:text-neutral-700"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      
 
       <div className="py-16 bg-neutral-50 flex items-center justify-center">
-        <div className=" flex flex-col md:grid md:grid-cols-4 w-full max-w-7xl gap-8 px-4 sm:px-6 lg:px-8 spacey-8 md:space-y-0" >
+        <div className=" flex flex-col md:grid md:grid-cols-4 w-full max-w-7xl gap-8 px-4 sm:px-6 lg:px-8 spacey-8 md:space-y-0">
           <div className="flex flex-col items-center justify-center  w-full">
             <h1 className="text-4xl text-neutral-900 mb-2">50+</h1>
             <p className="text-neutral-600">Team Members</p>
           </div>
 
-            <div className="flex flex-col items-center justify-center  w-full">
+          <div className="flex flex-col items-center justify-center  w-full">
             <h1 className="text-4xl text-neutral-900 mb-2">1000+</h1>
             <p className="text-neutral-600">Happy Clients</p>
           </div>
 
-            <div className="flex flex-col items-center justify-center  w-full">
+          <div className="flex flex-col items-center justify-center  w-full">
             <h1 className="text-4xl text-neutral-900 mb-2">5</h1>
             <p className="text-neutral-600">Years Experience</p>
           </div>
 
-            <div className="flex flex-col items-center justify-center  w-full">
+          <div className="flex flex-col items-center justify-center  w-full">
             <h1 className="text-4xl text-neutral-900 mb-2">99%</h1>
             <p className="text-neutral-600">Client Satisfaction</p>
           </div>
@@ -197,17 +223,28 @@ export default function aboutPage() {
 
       <div className=" py-16 px-4 sm:px-6 lg:px-8 spacey-8">
         <div>
-          <h1 className="text-3xl text-neutral-900 mb-4 text-center">Ready to Work Together?</h1>
-          <div className="flex items-center justify-center"> <p className="text-neutral-600 mb-8 flex  max-w-2xl text-center items-center justify-center ">Let's discuss how we can help bring your vision to life. Get in touch with our team today.</p></div>
-         <div className="flex item-center justify-center">
-          <div className=" flex flex-col md:flex md:flex-row items-center justify-center gap-4 w-full md:max-w-[400px]">
-             <button className="bg-indigo-600 border  text-white px-8 py-3 w-full rounded-lg hover:bg-indigo-800"> Get Start</button>
-             <button className="border border-neutral-300  text-neutral-700  w-full px-8 py-3 rounded-lg hover:bg-neutral-50" >Learn More</button>
-             
+          <h1 className="text-3xl text-neutral-900 mb-4 text-center">
+            Ready to Work Together?
+          </h1>
+          <div className="flex items-center justify-center">
+            {" "}
+            <p className="text-neutral-600 mb-8 flex  max-w-2xl text-center items-center justify-center ">
+              Let's discuss how we can help bring your vision to life. Get in
+              touch with our team today.
+            </p>
           </div>
+          <div className="flex item-center justify-center">
+            <div className=" flex flex-col md:flex md:flex-row items-center justify-center gap-4 w-full md:max-w-[400px]">
+              <button className="bg-indigo-600 border  text-white px-8 py-3 w-full rounded-lg hover:bg-indigo-800">
+                {" "}
+                Get Start
+              </button>
+              <button className="border border-neutral-300  text-neutral-700  w-full px-8 py-3 rounded-lg hover:bg-neutral-50">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
-
       </div>
       <AboutFooter />
     </>

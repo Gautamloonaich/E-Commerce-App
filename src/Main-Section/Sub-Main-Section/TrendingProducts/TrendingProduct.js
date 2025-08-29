@@ -86,7 +86,7 @@ export default function TrendingProduct() {
   ];
   return (
     <>
-      <div className="  pb-1 pt-4  sm:pb-20  px-7 md:px-16 lg:px-18 xl:px-27 space-y-3 sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
+      <div className="  pb-1 pt-4  sm:pb-20  px-7 md:px-16 lg:px-18 xl:px-27 space-y-3   sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
         <div className="flex flex-row justify-between items-center">
           <h1 className="font-bold text-[22px] md:text-[26px] lg:text-[30px] xl:text-[32px] ">
             Trending Product
@@ -95,7 +95,7 @@ export default function TrendingProduct() {
             View All
           </button>
         </div>
-        <div className="flex flex-row items-center overflow-x-auto overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
+        <div className="flex flex-row items-center overflow-x-auto  overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
           {trandingData.map((item, key) => {
             return (
               <div key={key}>
