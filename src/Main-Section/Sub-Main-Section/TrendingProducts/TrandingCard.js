@@ -18,7 +18,7 @@ export default function TrandingCard({
   }
   console.log(type);
   return (
-    <div className=" border-2 md:w-50 lg:w-60   flex flex-col h-[263px] sm:h-[320px]  md:h-[330px] lg:h-[320px]  border-gray-200  hover:shadow-lg hover:shadow-gray-200  rounded-xl ">
+    <div className=" border-2 md:w-50 lg:w-60  flex flex-col h-[263px] sm:h-[320px]  md:h-[330px] lg:h-[320px]  border-gray-200  hover:shadow-lg hover:shadow-gray-200  rounded-xl ">
       <div className="relative ">
         {" "}
         <Image
@@ -31,7 +31,7 @@ export default function TrandingCard({
             img: " rounded-t-xl object-cover w-full h-[120px] sm:h-[160px] md:h-[200px] ",
           }}
           className="z-50"
-          src={image}
+          src={image} 
         />
         <button
           onClick={() => setcolor(!color)}
@@ -68,13 +68,13 @@ export default function TrandingCard({
           {type}
         </span>
       </div>
-      <div className="p-2 sm:p-3 md:p-4 flex flex-col justify-between h-full">
+      <div className="p-2 sm:p-3 md:p-4 flex flex-col h-full justify-around  ">
         <p className="font-normal sm:font-semibold text-small sm:text-sm lg:text-md  text-gray-900 mb-2">
           {productname}
         </p>
         <span></span>
-        <div className="flex flex-row justify-between gap-2  items-end">
-          <div className="flex flex-col lg:flex-row  justify-start item-center  space-y-0.5 lg:space-x-1">
+        <div className="flex flex-row justify-between items-end gap-2 h-full m-0 ">
+          <div className="flex flex-col lg:flex-row  justify-start item-center m-0 space-y-0.5 lg:space-x-1">
             <span className="text-md lg:text-2xl font-bold">{newPrice}</span>
             <span
               className={
@@ -86,9 +86,10 @@ export default function TrandingCard({
               {oldPrice}
             </span>
           </div>
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-2  md:px-4 py-1 md:py-2 rounded-sm sm:rounded-md md:rounded-lg  ">
-            <FaCartPlus size={13} className="text-white " />
-          </button>
+          <button className="bg-white  md:bg-indigo-600  hover:transition-transform hover:duration-300 hover:scale-130 md:hover:scale-110  md:text-white px-2 flex  items-end  md:px-4 py-1 md:py-2 rounded-sm sm:rounded-md md:rounded-lg  ">
+              <FaCartPlus size={17} className="hover:text-indigo-700 text-gray-600 md:text-white sm:hover:text-white " />
+            </button>
+          
         </div>
       </div>
     </div>

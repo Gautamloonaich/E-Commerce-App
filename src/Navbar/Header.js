@@ -1,5 +1,5 @@
 "use client";
-import React  from "react";
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -21,16 +21,17 @@ import { IoSearch } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa";
-
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+  const pathname = usePathname();
+  console.log(pathname);
   const menuItems = [
     "Profile",
     "Dashboard",
     "About",
-    "Deals",
+    "products",
     "Contacts",
     "My Settings",
     "Help & Feedback",
@@ -66,11 +67,15 @@ export default function Header() {
             </p>
           </NavbarBrand>
 
-          <NavbarItem isActive>
+          <NavbarItem>
             <Link
-              className="text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600 "
+              className={
+                pathname === "/"
+                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold   ml-5 `
+                  : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600 `
+              }
               color="foreground"
-              href="#"
+              href="/"
             >
               Home
             </Link>
@@ -97,44 +102,81 @@ export default function Header() {
               }}
             >
               <DropdownItem key="autoscaling" description="Explor all sections">
-                Categories
+                <Link
+                  href="/categories "
+                  className={
+                    pathname == "/categories" ? `text-indigo-600` : `text-black`
+                  }
+                >
+                  Categories
+                </Link>
               </DropdownItem>
               <DropdownItem
                 key="usage_metrics"
                 description="Best discounts available "
               >
-                Deals
+                <Link
+                  href="/products "
+                  className={
+                    pathname == "/products" ? `text-indigo-600` : `text-black`
+                  }
+                >
+                  Products
+                </Link>
               </DropdownItem>
               <DropdownItem
                 key="production_ready"
                 description="Details about ShopHub"
-              ><Link href="/aboutSection"> About</Link>
+              >
+                <Link
+                  href="/aboutSection"
+                  className={
+                    pathname == "/aboutSection"
+                      ? `text-indigo-600`
+                      : `text-black`
+                  }
+                >
+                  {" "}
+                  About
+                </Link>
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
 
           <NavbarItem className="hidden md:flex">
             <Link
-              className="text-[rgba(55,65,81,1 )] text-[18px] font-medium cursor-pointer   hover:text-indigo-600"
+              className={
+                pathname === "/categories"
+                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold  `
+                  : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer   hover:text-indigo-600 `
+              }
               color="foreground"
               aria-current="page"
-              href="#"
+              href="/categories"
             >
               Categories
             </Link>
           </NavbarItem>
           <NavbarItem className="hidden md:flex">
             <Link
-              className="text-[rgba(55,65,81,1 )] text-[18px] font-medium cursor-pointe ml-5 hover:text-indigo-600"
+              className={
+                pathname === "/products"
+                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
+                  : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
+              }
               color="foreground"
-              href="#"
+              href="/products"
             >
-              Deals
+              Products
             </Link>
           </NavbarItem>
           <NavbarItem className="hidden md:flex">
             <Link
-              className="text-[rgba(55,65,81,1 )] text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600"
+              className={
+                pathname === "/aboutSection"
+                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
+                  : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
+              }
               color="foreground"
               href="/aboutSection"
             >
@@ -162,10 +204,17 @@ export default function Header() {
             />
           </NavbarItem>
           <NavbarItem>
-            <FaHeart
-              size={20}
-              className="ml-1 sm:ml-3 hover:text-indigo-600 w-[17px] sm:w-[20px] text-gray-600"
-            />
+            <Link href="/wishList">
+              {" "}
+              <FaHeart
+                size={20}
+                className={
+                  pathname == "/wishList"
+                    ? `ml-1 sm:ml-3  text-indigo-600 w-[19px] sm:w-[22px] `
+                    : `ml-1 sm:ml-3 hover:text-indigo-600 w-[17px] sm:w-[20px] text-gray-600`
+                }
+              />
+            </Link>
           </NavbarItem>
           <NavbarItem>
             <FaCartShopping
@@ -193,9 +242,15 @@ export default function Header() {
                   gautamloonaich5822@gmail.com
                 </p>
               </DropdownItem>
-              <DropdownItem color="primary" key="settings">My Settings</DropdownItem>
-              <DropdownItem color="primary" key="team_settings">Team Settings</DropdownItem>
-              <DropdownItem color="primary" key="system">Contacts</DropdownItem>
+              <DropdownItem color="primary" key="settings" className="">
+                My Settings
+              </DropdownItem>
+              <DropdownItem color="primary" key="team_settings">
+                Team Settings
+              </DropdownItem>
+              <DropdownItem color="primary" key="system">
+                Contacts
+              </DropdownItem>
               <DropdownItem color="primary" key="help_and_feedback">
                 Help & Feedback
               </DropdownItem>
