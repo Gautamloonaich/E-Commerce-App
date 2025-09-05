@@ -12,10 +12,14 @@ export default function Productfilter() {
 
     [
       { key: "all categories", label: "all categories" },
-      { key: "Apple", label: "Apple" },
-      { key: "samsung", label: "samsung" },
-      { key: "Nike", label: "Nike" },
-      { key: "Sony", label: "Sony" },
+      { key: "Electronices", label: "Electronices" },
+      { key: "Home & Garden", label: "Home & Garden" },
+      { key: "Fashion", label: "Fashion" },
+      { key: "Books & Media", label: "Books & Media" },
+      { key: "Health & Beauty", label: "Health & Beauty" },
+      { key: "Sports & Outdoor", label: "Sports & Outdoor" },
+
+
     ],
 
     [
@@ -26,6 +30,7 @@ export default function Productfilter() {
     ],
   ];
   const sortBy = [
+    { key: "Revalance", label: "Relevance" },
     { key: "Price: Low to High", label: "Price: Low to High" },
     { key: "Price: High to Low", label: "Price: High to Low" },
     { key: "Customer Rating", label: "Customer Rating" },
@@ -67,7 +72,7 @@ export default function Productfilter() {
                 <Select
                   size="sm"
                   variant="bordered"
-                  className="w-30 bg-white  rounded-lg"
+                  className="w-40 bg-white  rounded-lg"
                   classNames={{
                     trigger:
                       "min-h-10 border-2 border-gray-300 data-[open=true]:border-indigo-500 data-[focus=true]:border-indigo-500 ",
