@@ -22,6 +22,7 @@ import { FaHeart } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import NextLink from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -37,193 +38,211 @@ export default function Header() {
     "Help & Feedback",
     "Log Out",
   ];
+  let navbar = ["/login", "/signin"];
+  if (navbar.includes(pathname)) {
+    return null;
+  } else {
+    return (
+      <div className="w-full relative ">
+        <Navbar
+          isBordered
+          isMenuOpen={isMenuOpen}
+          onMenuOpenChange={setIsMenuOpen}
+          className=" h-[72px] fixed top-0 bg-white"
+        >
+          <NavbarContent className="sm:hidden" justify="start">
+            <NavbarMenuToggle
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            />
+          </NavbarContent>
 
-  return (
-    <div className="w-full relative ">
-      <Navbar
-        isBordered
-        isMenuOpen={isMenuOpen}
-        onMenuOpenChange={setIsMenuOpen}
-        className=" h-[72px] fixed top-0 bg-white"
-      >
-        <NavbarContent className="sm:hidden" justify="start">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          />
-        </NavbarContent>
+          <NavbarContent className="flex sm:hidden pr-3" justify="center">
+            <NavbarBrand>
+              <p className="font-bold text-[1.25rem] leading-[1.75rem] ">
+                ShopHub
+              </p>
+            </NavbarBrand>
+          </NavbarContent>
 
-        <NavbarContent className="flex sm:hidden pr-3" justify="center">
-          <NavbarBrand>
-            <p className="font-bold text-[1.25rem] leading-[1.75rem] ">
-              ShopHub
-            </p>
-          </NavbarBrand>
-        </NavbarContent>
+          <NavbarContent className="hidden sm:flex gap-4" justify="center">
+            <NavbarBrand>
+              <p className="font-bold  text-[1.5rem] leading-[2rem]  text-indigo-600">
+                ShopHub
+              </p>
+            </NavbarBrand>
 
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarBrand>
-            <p className="font-bold  text-[1.5rem] leading-[2rem]  text-indigo-600">
-              ShopHub
-            </p>
-          </NavbarBrand>
-
-          <NavbarItem>
-            <Link
-              className={
-                pathname === "/"
-                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold   ml-5 `
-                  : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600 `
-              }
-              color="foreground"
-              href="/"
-            >
-              Home
-            </Link>
-          </NavbarItem>
-
-          <Dropdown>
             <NavbarItem>
-              <DropdownTrigger className="">
-                <Button
-                  disableRipple
-                  className="p-0 bg-transparent data-[hover=true]:bg-transparent gap-0.5 flex md:hidden text-[rgba(55,65,81,1 )] text-[18px] font-medium cursor-pointer  hover:text-indigo-600"
-                  endContent={<FaAngleDown className="mt-2 " size={15} />}
-                  radius="sm"
-                  variant="light"
-                >
-                  More
-                </Button>
-              </DropdownTrigger>
-            </NavbarItem>
-            <DropdownMenu
-              aria-label="ACME features"
-              itemClasses={{
-                base: "gap-4",
-              }}
-            >
-              <DropdownItem key="autoscaling" description="Explor all sections">
-                <Link
-                  href="/categories "
-                  className={
-                    pathname == "/categories" ? `text-indigo-600` : `text-black`
-                  }
-                >
-                  Categories
-                </Link>
-              </DropdownItem>
-              <DropdownItem
-                key="usage_metrics"
-                description="Best discounts available "
-              >
-                <Link
-                  href="/products "
-                  className={
-                    pathname == "/products" ? `text-indigo-600` : `text-black`
-                  }
-                >
-                  Products
-                </Link>
-              </DropdownItem>
-              <DropdownItem
-                key="production_ready"
-                description="Details about ShopHub"
-              >
-                <Link
-                  href="/aboutSection"
-                  className={
-                    pathname == "/aboutSection"
-                      ? `text-indigo-600`
-                      : `text-black`
-                  }
-                >
-                  {" "}
-                  About
-                </Link>
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-
-          <NavbarItem className="hidden md:flex">
-            <Link
-              className={
-                pathname === "/categories"
-                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold  `
-                  : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer   hover:text-indigo-600 `
-              }
-              color="foreground"
-              aria-current="page"
-              href="/categories"
-            >
-              Categories
-            </Link>
-          </NavbarItem>
-          <NavbarItem className="hidden md:flex">
-            <Link
-              className={
-                pathname === "/products"
-                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
-                  : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
-              }
-              color="foreground"
-              href="/products"
-            >
-              Products
-            </Link>
-          </NavbarItem>
-          <NavbarItem className="hidden md:flex">
-            <Link
-              className={
-                pathname === "/aboutSection"
-                  ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
-                  : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
-              }
-              color="foreground"
-              href="/aboutSection"
-            >
-              About
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-
-        <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
-            <Input
-              classNames={{
-                base: "max-w-full sm:max-w-[10rem] h-11",
-                mainWrapper: "h-full",
-
-                input: "text-small",
-                inputWrapper:
-                  "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 ",
-              }}
-              placeholder="Search Products.."
-              size="sm"
-              startContent={<IoSearch className="ml-1" size={18} />}
-              type="search"
-              className="w-full min-w-50 xl:min-w-80  "
-            />
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="/wishList">
-              {" "}
-              <FaHeart
-                size={20}
+              <Link
                 className={
-                  pathname == "/wishList"
-                    ? `ml-1 sm:ml-3  text-indigo-600 w-[19px] sm:w-[22px] `
-                    : `ml-1 sm:ml-3 hover:text-indigo-600 w-[17px] sm:w-[20px] text-gray-600`
+                  pathname === "/"
+                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold   ml-5 `
+                    : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600 `
                 }
-              />
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <FaCartShopping
-              size={21}
-              className="ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:text-indigo-600 text-gray-600"
-            />
-          </NavbarItem>
+                color="foreground"
+                as={NextLink}
+                href="/"
+              >
+                Home
+              </Link>
+            </NavbarItem>
 
-          <Dropdown placement="bottom-end">
+            <Dropdown>
+              <NavbarItem>
+                <DropdownTrigger className="">
+                  <Button
+                    disableRipple
+                    className="p-0 bg-transparent data-[hover=true]:bg-transparent gap-0.5 flex lg:hidden text-[rgba(55,65,81,1 )] text-[18px] font-medium cursor-pointer  hover:text-indigo-600"
+                    endContent={<FaAngleDown className="mt-2 " size={15} />}
+                    radius="sm"
+                    variant="light"
+                  >
+                    More
+                  </Button>
+                </DropdownTrigger>
+              </NavbarItem>
+              <DropdownMenu
+                aria-label="ACME features"
+                itemClasses={{
+                  base: "gap-4 ",
+                }}
+              >
+                <DropdownItem
+                  key="autoscaling"
+                  description="Explor all sections"
+                >
+                  <Link
+                   as={NextLink}
+                    href="/categories "
+
+                    className={
+                      pathname == "/categories"
+                        ? `text-indigo-600`
+                        : `text-black`
+                    }
+                  >
+                    Categories
+                  </Link>
+                </DropdownItem>
+                <DropdownItem
+                  key="usage_metrics"
+                  description="Best discounts available "
+                >
+                  <Link
+                   as={NextLink}
+                    href="/products "
+                    className={
+                      pathname == "/products" ? `text-indigo-600` : `text-black`
+                    }
+                  >
+                    Products
+                  </Link>
+                </DropdownItem>
+                <DropdownItem
+                  key="production_ready"
+                  description="Details about ShopHub"
+                >
+                  <Link
+                    as={NextLink}
+                    href="/aboutSection"
+                    className={
+                      pathname == "/aboutSection"
+                        ? `text-indigo-600`
+                        : `text-black`
+                    }
+                  >
+                    {" "}
+                    About
+                  </Link>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+
+            <NavbarItem className="hidden md:flex">
+              <Link
+               as={NextLink}
+                className={
+                  pathname === "/categories"
+                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold  `
+                    : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer   hover:text-indigo-600 `
+                }
+                color="foreground"
+                aria-current="page"
+                href="/categories"
+              >
+                Categories
+              </Link>
+            </NavbarItem>
+            <NavbarItem className="hidden md:flex">
+              <Link
+               as={NextLink}
+                className={
+                  pathname === "/products"
+                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
+                    : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
+                }
+                color="foreground"
+                href="/products"
+              >
+                Products
+              </Link>
+            </NavbarItem>
+            <NavbarItem className="hidden md:flex">
+              <Link
+               as={NextLink}
+                className={
+                  pathname === "/aboutSection"
+                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
+                    : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
+                }
+                color="foreground"
+                href="/aboutSection"
+              >
+                About
+              </Link>
+            </NavbarItem>
+          </NavbarContent>
+
+          <NavbarContent justify="end">
+            <NavbarItem className="hidden lg:flex">
+              <Input
+                classNames={{
+                  base: "max-w-full lg:max-w-[6rem] xl:max-w-[10rem] h-11",
+                  mainWrapper: "h-full",
+
+                  input: "text-small",
+                  inputWrapper:
+                    "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 ",
+                }}
+                placeholder="Search Products.."
+                size="sm"
+                startContent={<IoSearch className="ml-1" size={18} />}
+                type="search"
+                className="w-full min-w-40 xl:min-w-60  "
+              />
+            </NavbarItem>
+            <NavbarItem>
+              <Link 
+               as={NextLink}
+              href="/wishList">
+                {" "}
+                <FaHeart
+                  size={20}
+                  className={
+                    pathname == "/wishList"
+                      ? `ml-1 sm:ml-3  text-indigo-600 w-[19px] sm:w-[22px] `
+                      : `ml-1 sm:ml-3 hover:text-indigo-600 w-[17px] sm:w-[20px] text-gray-600`
+                  }
+                />
+              </Link>
+            </NavbarItem>
+            <NavbarItem>
+              <FaCartShopping
+                size={21}
+                className="ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:text-indigo-600 text-gray-600"
+              />
+            </NavbarItem>
+
+            {/* <Dropdown placement="bottom-end">
             <DropdownTrigger>
               <Avatar
                 isBordered
@@ -262,30 +281,43 @@ export default function Header() {
                 Log Out
               </DropdownItem>
             </DropdownMenu>
-          </Dropdown>
-        </NavbarContent>
-
-        <NavbarMenu>
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                className="w-full"
-                color={
-                  index === 2
-                    ? "warning"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                href="#"
-                size="lg"
+          </Dropdown> */}
+            <NavbarItem>
+              <Button
+               as={NextLink}
+                color="secondary"
+                href="/login"
+                variant="flat"
+                className="mr-0.5 h-8 min-w-3 p-2 rounded-md text-xs sm:h-10 sm:min-w-8 sm:rounded-xl sm:text-sm sm:p-5 "
               >
-                {item}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
-      </Navbar>
-    </div>
-  );
+                Login
+              </Button>
+            </NavbarItem>
+          </NavbarContent>
+
+          <NavbarMenu>
+            {menuItems.map((item, index) => (
+              <NavbarMenuItem key={`${item}-${index}`}>
+                <Link
+                  className="w-full"
+                  color={
+                    index === 2
+                      ? "warning"
+                      : index === menuItems.length - 1
+                      ? "danger"
+                      : "foreground"
+                  }
+                   as={NextLink}
+                  href="#"
+                  size="lg"
+                >
+                  {item}
+                </Link>
+              </NavbarMenuItem>
+            ))}
+          </NavbarMenu>
+        </Navbar>
+      </div>
+    );
+  }
 }
