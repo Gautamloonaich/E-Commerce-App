@@ -140,7 +140,7 @@ export default function Cart() {
           Review your items before checkout
         </p>
 
-        <div className=" flex flex-col lg:grid  lg:grid-cols-3 gap-3   ">
+        <div className=" flex flex-col lg:grid  lg:grid-cols-3 gap-9   ">
           <div className=" lg:col-span-2 min-h-30 border border-neutral-200 rounded-xl">
             <div className=" px-2 py-6 sm:px-6  border-b border-neutral-200">
               <h1 className="text-xl text-neutral-900">Cart Items (3)</h1>
@@ -179,7 +179,7 @@ export default function Cart() {
               </button>
             </div>
           </div>
-          <div className="bg-blue-50 lg:col-span-1 h-120 ">
+          <div className=" lg:col-span-1  ">
             <OrderSummary />
           </div>
         </div>

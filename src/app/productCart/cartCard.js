@@ -2,8 +2,11 @@
 import Image from "next/image";
 import { GrFormSubtract } from "react-icons/gr";
 import { GoPlus } from "react-icons/go";
+import { FaLock } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
-
+import { FaCcVisa } from "react-icons/fa";
+import { FaCcMastercard } from "react-icons/fa";
+import { FaCcPaypal } from "react-icons/fa";
 import { Button } from "@heroui/react";
 import { useState } from "react";
 
@@ -227,12 +230,25 @@ export function OrderSummary() {
             </div>
             <div className="max-w-full w-full mt-15 ">
               <Button
-                    className="w-full h-11  bg-gradient-to-r text-md sm:text-lg lg:text-md from-indigo-500 to-purple-500 text-white font-semibold border-0"
-                    type="submit"
-                    variant="bordered"
-                  >
-                      Proceed to Checkout
-                  </Button>
+                className="w-full h-11  bg-gradient-to-r text-md sm:text-lg lg:text-md from-indigo-500 to-purple-500 text-white font-semibold border-0"
+                type="submit"
+                variant="bordered"
+              >
+                Proceed to Checkout
+              </Button>
+            </div>
+            <div className="flex flex-col gap-3 justify-center items-center mt-4">
+              <div className="flex gap-2 items-center justify-center">
+                <FaLock size={16} className="text-neutral-600 size-4 " />
+                <span className="text-sm text-neutral-600">
+                  Secure Checkout
+                </span>
+              </div>
+              <div className="flex gap-3 items-center justify-center">
+                <FaCcVisa size={22} className="text-neutral-400" />
+                <FaCcMastercard size={22} className="text-neutral-400" />
+                <FaCcPaypal size={22} className="text-neutral-400" />
+              </div>
             </div>
           </div>
         </div>
