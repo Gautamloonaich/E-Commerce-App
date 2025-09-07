@@ -236,10 +236,20 @@ export default function Header() {
               </Link>
             </NavbarItem>
             <NavbarItem>
+               <Link 
+               as={NextLink}
+              href="/productCart">
               <FaCartShopping
                 size={21}
-                className="ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:text-indigo-600 text-gray-600"
+                className=
+                {
+                  pathname == "/productCart"
+                      ? `ml-0 sm:ml-3 w-[19px] sm:w-[22px] text-indigo-600  `
+                      : `ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:text-indigo-600 text-gray-600`
+                  
+                }
               />
+              </Link>
             </NavbarItem>
 
             {/* <Dropdown placement="bottom-end">

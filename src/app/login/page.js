@@ -38,21 +38,19 @@ export default function Login() {
                     isRequired
                     className="text-xl"
                     variant="underlined"
-                   color="secondary"
-                  classNames={{
-                      label:"text-gray-700 font-medium text-sm"
-                  }}
-                  onChange={Submit}
-                 
+                    color="secondary"
+                    classNames={{
+                      label: "text-gray-700 font-medium text-sm",
+                    }}
+                    onChange={Submit}
                   />
                   <Input
                     className="w-full"
                     isRequired
-                     classNames={{
-                      label:"text-gray-700 font-medium text-sm"
-
-                  }}
-                   onChange={Submit}
+                    classNames={{
+                      label: "text-gray-700 font-medium text-sm",
+                    }}
+                    onChange={Submit}
                     endContent={
                       <button
                         aria-label="toggle password visibility"
@@ -72,14 +70,16 @@ export default function Login() {
                     type={isVisible ? "text" : "password"}
                     variant="underlined"
                   />
-                  <Link href="#" className="text-xs mt-2 text-indigo-500 underline">
+                  <Link
+                    href="#"
+                    className="text-xs mt-2 text-indigo-500 underline"
+                  >
                     Forget Password ?
                   </Link>
                   <Button
                     className="w-full mt-10 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold border-0"
                     type="submit"
                     variant="bordered"
-                    
                   >
                     Login
                   </Button>
@@ -96,7 +96,6 @@ export default function Login() {
                   href="/signin"
                   type="submit"
                   variant="bordered"
-                  
                 >
                   Create New Account
                 </Button>

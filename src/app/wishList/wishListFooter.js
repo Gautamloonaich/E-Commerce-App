@@ -2,7 +2,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-export default function AboutFooter() {
+export default function WishListFooter() {
   return (
     <>
       <div className=" relative  ">
