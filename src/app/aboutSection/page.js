@@ -1,7 +1,6 @@
 import Image from "next/image";
 import AboutFooter from "./aboutfooter";
 import AboutNavbar from "./aboutNavbaar";
-import image from "../../../public/companyimage.jpg";
 import { FaLightbulb } from "react-icons/fa";
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaStar } from "react-icons/fa6";
@@ -11,8 +10,8 @@ import person3 from "../../../public/person-03.svg"
 import person4 from "../../../public/person-04.svg"
 import { RxLinkedinLogo } from "react-icons/rx";
 import { FaGithub } from "react-icons/fa6";
-
-
+import Images  from "./componentsNew";
+import Googlemap from "./Googlemap";
 
 
 export default function aboutPage() {
@@ -33,7 +32,7 @@ export default function aboutPage() {
    
       <div>
         <div className="py-16 flex justify-center">
-          <div className="   gap-5 px-4 max-w-7xl  sm:px-6 lg:px-8 grid items-center md:grid-cols-2  ">
+          <div className="   gap-5 px-4 max-w-7xl  sm:px-6 lg:px-8 grid items-center lg:grid-cols-2  ">
             <div className="w-full">
               <h1 className="text-3xl text-neutral-900 mb-6 font-bold">
                 Our Story
@@ -57,11 +56,7 @@ export default function aboutPage() {
                 tirelessly to solve them.
               </p>
             </div>
-            <Image
-              alt="company image"
-              src={image}
-              className="h-80 max-w-full flex rounded-xl object-cover"
-            />
+           <Images/>
           </div>
         </div>
       </div>
@@ -207,8 +202,13 @@ export default function aboutPage() {
           </div>
           </div>
         </div>
-
+ {/* <div className="w-full flex  justify-center items-center bg-red-300">
+        <div className=" bg-red-200   w-full h-100">
+        <Googlemap/>
       </div>
+      </div> */}
+      </div>
+     
       <AboutFooter />
     </>
   );
