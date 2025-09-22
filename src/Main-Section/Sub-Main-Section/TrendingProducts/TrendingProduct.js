@@ -1,3 +1,4 @@
+import Link from "next/link";
 import TrandingCard from "./TrandingCard";
 
 export default function TrendingProduct() {
@@ -86,19 +87,20 @@ export default function TrendingProduct() {
   ];
   return (
     <>
-      <div className="  pb-1 pt-4  sm:pb-20  px-7 md:px-16 lg:px-18 xl:px-27 space-y-3   sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
+      <div className="  pb-10 pt-4  sm:pb-20  px-7 md:px-16 lg:px-18 xl:px-27 space-y-3   sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
         <div className="flex flex-row justify-between items-center">
           <h1 className="font-bold text-[22px] md:text-[26px] lg:text-[30px] xl:text-[32px] ">
             Trending Product
           </h1>
-          <button className="text-indigo-500 font-medium hover:transition-transform hover:scale-120 hover:duration-250 hover:text-indigo-700 text-sm md:text-lg pr-2">
+          <button className="text-indigo-500 cursor-pointer font-medium hover:transition-transform hover:scale-120 hover:duration-250 hover:text-indigo-700 text-sm md:text-lg pr-2">
             View All
           </button>
         </div>
-        <div className="flex flex-row items-center overflow-x-auto  overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
+        <div className="flex flex-row items-center py-5 px-4 overflow-x-auto  overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
           {trandingData.map((item, key) => {
             return (
-              <div key={key}>
+              <div key={key} >
+              
                 <TrandingCard
                   image={item.image}
                   productname={item.Name}
@@ -107,6 +109,7 @@ export default function TrendingProduct() {
                   off={item.off}
                   type={item.type}
                 />
+              
               </div>
             );
           })}

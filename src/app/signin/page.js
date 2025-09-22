@@ -2,7 +2,7 @@
 import { Form, Input, Button } from "@heroui/react";
 import { TbEyeFilled } from "react-icons/tb";
 import { PiEyeSlashFill } from "react-icons/pi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Loginimage from "../../../public/loginImage04.jpg";
@@ -13,23 +13,122 @@ import { NextLink } from "next/link";
 export default function Signin() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
-  const [fullName, setFullName] = useState("");
-  const [nameError, serNameError] = useState("");
-
-  const [email, setEmail] = useState("");
-  const [password, setPassward] = useState("");
-
-  function handlesumbit(e) {
-    e.preventDefault();
-    if (fullName.length == 0) {
-      serNameError("Enter Your Name");
+  const [Error, setError] = useState({});
+  let [isSumbiting, setISSumbiting] = useState(false);
+  let [inputData, setInputData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    conformPassword: "",
+  });
+  function handleInputFild(e) {
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
+    let fieldError = validateInputs(e.target.name, e.target.value);
+    if (fieldError) {
+      setError({ ...Error, [e.target.name]: fieldError });
     } else {
-      serNameError("");
+      let newError = { ...Error };
+      delete newError[e.target.name];
+      setError(newError);
+    }
+  }
+  function validateInputs(name, value) {
+    if (name === "fullName") {
+      if (value == "") {
+        return "fullName is required !";
+      } else if (value.length < 3) {
+        return "Invalid Name !";
+      }
+    }
+    if (name === "email") {
+      if (value === "") {
+        return "Email is required !";
+      } else if (validateEmail(value) == false) {
+        return " Invalid Email !";
+      }
     }
 
-    console.log("create account");
+    if (name === "password") {
+      if (value === "") {
+        return " Password is required !";
+      } else if (validatepassword(value) == false) {
+        return " Strong password is required !";
+      }
+    }
+
+    if (name === "conformPassword") {
+      if (value === "") {
+        return "password conformation is required !";
+      } else if (inputData.password != value) {
+        return " password not match!";
+      }
+    }
+    return null;
   }
 
+  console.log("Error:", Error);
+
+  function validateEmail(email) {
+    let emailRegex = /^[\w._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    return emailRegex.test(email);
+  }
+  function validatepassword(pass) {
+    let passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(pass);
+  }
+
+  function handleError() {
+    let err = {};
+    if (inputData.fullName === "") {
+      err.fullName = "fullName is required !";
+    } else if (inputData.fullName.length < 3) {
+      err.fullName = "Invalid Name !";
+    }
+
+    if (inputData.email === "") {
+      err.email = "Email is required !";
+    } else if (validateEmail(inputData.email) == false) {
+      err.email = " Invalid Email !";
+    }
+
+    if (inputData.password === "") {
+      err.password = " Password is required !";
+    } else if (validatepassword(inputData.password) == false) {
+      err.password = " Strong password is required !";
+    }
+
+    if (inputData.conformPassword === "") {
+      err.conformPassword = "password conformation is required !";
+    } else if (inputData.password != inputData.conformPassword) {
+      err.conformPassword = " password not match!";
+    }
+
+    return err;
+  }
+  function handlesumbit(e) {
+    e.preventDefault();
+    const validationErrors = handleError();
+    setError(validationErrors); // is update first other wise on first click inputdata is not visible
+    {
+      Object.keys(Error).length === 0
+        ? setISSumbiting(true)
+        : setISSumbiting(false);
+    }
+    console.log("create account");
+  }
+  useEffect(() => {
+    if (isSumbiting && Object.keys(Error).length === 0) {
+      console.log("input:", inputData);
+      setInputData({
+        fullName: "",
+        email: "",
+        password: "",
+        conformPassword: "",
+      });
+      setISSumbiting(false);
+    }
+  }, [Error, isSumbiting]);
   return (
     <div className="h-full w-full">
       <NavbarLogin />
@@ -47,37 +146,47 @@ export default function Signin() {
                   onSubmit={handlesumbit}
                 >
                   <Input
-                    onChange={(e) => setFullName(e.target.value)}
+                    onChange={(e) => handleInputFild(e)}
                     label="Full name"
                     type="text"
+                    name="fullName"
                     className="text-xl"
                     variant="underlined"
-                    color={nameError == "" ? `secondary` : `danger`}
+                    value={inputData.fullName}
+                    color={"fullName" in Error ? `danger` : `secondary`}
                     classNames={{
                       label: "text-gray-700 font-medium text-sm",
                     }}
                   />
-                  {nameError && (
-                    <p className="text-red-500 text-xs">{nameError}</p>
+                  {Error && (
+                    <p className="text-red-500  text-xs ">{Error.fullName}</p>
                   )}
 
                   <Input
                     label="Email"
                     type="email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    name="email"
+                    value={inputData.email}
+                    onChange={(e) => handleInputFild(e)}
                     errorMessage="Please enter a valid email address."
                     isRequired
                     className="text-xl"
                     variant="underlined"
-                    color="secondary"
+                    color={"email" in Error ? `danger` : `secondary`}
                     classNames={{
                       label: "text-gray-700 font-medium text-sm",
                     }}
                   />
+                  {Error && (
+                    <p className="text-red-500  text-xs ">{Error.email}</p>
+                  )}
+
                   <Input
                     className="w-full"
+                    name="password"
+                    value={inputData.password}
                     isRequired
-                    onChange={(e) => setPassward(e.target.value)}
+                    onChange={(e) => handleInputFild(e)}
                     classNames={{
                       label: "text-gray-700 font-medium text-sm",
                     }}
@@ -96,13 +205,20 @@ export default function Signin() {
                       </button>
                     }
                     label="Create password"
-                    color="secondary"
+                    color={"password" in Error ? `danger` : `secondary`}
                     type={isVisible ? "text" : "password"}
                     variant="underlined"
                   />
+                  {Error && (
+                    <p className="text-red-500  text-xs ">{Error.password}</p>
+                  )}
+
                   <Input
                     className="w-full"
                     isRequired
+                    name="conformPassword"
+                    value={inputData.conformPassword}
+                    onChange={(e) => handleInputFild(e)}
                     classNames={{
                       label: "text-gray-700 font-medium text-sm",
                     }}
@@ -121,10 +237,15 @@ export default function Signin() {
                       </button>
                     }
                     label="Conform password"
-                    color="secondary"
+                    color={"conformPassword" in Error ? `danger` : `secondary`}
                     type={isVisible ? "text" : "password"}
                     variant="underlined"
                   />
+                  {Error && (
+                    <p className="text-red-500  text-xs ">
+                      {Error.conformPassword}
+                    </p>
+                  )}
 
                   <Button
                     className="w-full mt-10 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold border-0"

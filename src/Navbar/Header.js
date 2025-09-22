@@ -43,12 +43,12 @@ export default function Header() {
     return null;
   } else {
     return (
-      <div className="w-full relative ">
+      <div className=" max-w-7xl w-full relative ">
         <Navbar
           isBordered
           isMenuOpen={isMenuOpen}
           onMenuOpenChange={setIsMenuOpen}
-          className=" h-[72px] fixed top-0 bg-white"
+          className=" h-[72px]  rounded-none sm:rounded-none  fixed top-0 sm:top-0 backdrop-blur-md bg-white/70 border-white/10 shadow-md "
         >
           <NavbarContent className="sm:hidden" justify="start">
             <NavbarMenuToggle
@@ -75,8 +75,8 @@ export default function Header() {
               <Link
                 className={
                   pathname === "/"
-                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold   ml-5 `
-                    : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600 `
+                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 animate-bounce text-[18px] font-bold   ml-5 `
+                    : `text-[rgba(55,65,81,0.6 )] hover:scale-90 hover:duration-400 text-[18px] font-medium cursor-pointer  ml-5 hover:text-indigo-600 `
                 }
                 color="foreground"
                 as={NextLink}
@@ -116,7 +116,7 @@ export default function Header() {
 
                     className={
                       pathname == "/categories"
-                        ? `text-indigo-600`
+                        ? `text-indigo-600 `
                         : `text-black`
                     }
                   >
@@ -162,8 +162,8 @@ export default function Header() {
                as={NextLink}
                 className={
                   pathname === "/categories"
-                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px] font-bold  `
-                    : `text-[rgba(55,65,81,0.6 )] text-[18px] font-medium cursor-pointer   hover:text-indigo-600 `
+                    ? `text-[rgba(55,65,81,0.6 )] animate-bounce text-indigo-600 text-[18px] font-bold  `
+                    : `text-[rgba(55,65,81,0.6 )] text-[18px] hover:scale-90 hover:duration-600  font-medium cursor-pointer   hover:text-indigo-600 `
                 }
                 color="foreground"
                 aria-current="page"
@@ -177,8 +177,8 @@ export default function Header() {
                as={NextLink}
                 className={
                   pathname === "/products"
-                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
-                    : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
+                    ? `text-[rgba(55,65,81,0.6 )] animate-bounce text-indigo-600 text-[18px]  ml-5 font-bold  `
+                    : `text-[rgba(55,65,81,0.6 )] text-[18px] hover:scale-90 hover:duration-600  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
                 }
                 color="foreground"
                 href="/products"
@@ -191,8 +191,8 @@ export default function Header() {
                as={NextLink}
                 className={
                   pathname === "/aboutSection"
-                    ? `text-[rgba(55,65,81,0.6 )] text-indigo-600 text-[18px]  ml-5 font-bold  `
-                    : `text-[rgba(55,65,81,0.6 )] text-[18px]  ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
+                    ? `text-[rgba(55,65,81,0.6 )] animate-bounce text-indigo-600 text-[18px]  ml-5 font-bold  `
+                    : `text-[rgba(55,65,81,0.6 )] text-[18px] hover:scale-90 hover:duration-600 ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
                 }
                 color="foreground"
                 href="/aboutSection"
@@ -211,7 +211,7 @@ export default function Header() {
 
                   input: "text-small",
                   inputWrapper:
-                    "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20 ",
+                    "h-full font-normal rounded-full text-default-500 bg-default-400/20 dark:bg-default-500/20 ",
                 }}
                 placeholder="Search Products.."
                 size="sm"
@@ -229,8 +229,8 @@ export default function Header() {
                   size={20}
                   className={
                     pathname == "/wishList"
-                      ? `ml-1 sm:ml-3  text-indigo-600 w-[19px] sm:w-[22px] `
-                      : `ml-1 sm:ml-3 hover:text-indigo-600 w-[17px] sm:w-[20px] text-gray-600`
+                      ? `ml-1 sm:ml-3 animate-bounce text-indigo-600 w-[19px] sm:w-[22px] `
+                      : `ml-1 sm:ml-3 hover:scale-90 hover:duration-400 hover:text-indigo-600 w-[17px] sm:w-[20px] text-gray-600`
                   }
                 />
               </Link>
@@ -244,8 +244,8 @@ export default function Header() {
                 className=
                 {
                   pathname == "/productCart"
-                      ? `ml-0 sm:ml-3 w-[19px] sm:w-[22px] text-indigo-600  `
-                      : `ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:text-indigo-600 text-gray-600`
+                      ? `ml-0 sm:ml-3 w-[19px] animate-bounce sm:w-[22px] text-indigo-600  `
+                      : `ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:scale-90 hover:duration-400 hover:text-indigo-600 text-gray-600`
                   
                 }
               />

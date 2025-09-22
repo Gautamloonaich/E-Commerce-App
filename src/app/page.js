@@ -3,7 +3,7 @@ import MainContent from "@/Main-Section/MainContent";
 
 export default function Home() {
   return (
-    <div className="   ">
+    <div className="    ">
       <MainContent/>
       <Footer/>
     </div>

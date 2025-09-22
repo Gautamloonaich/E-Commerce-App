@@ -1,8 +1,8 @@
 "use client";
-import { Form, Input, Button } from "@heroui/react";
+import { Form, Input, Button, input } from "@heroui/react";
 import { TbEyeFilled } from "react-icons/tb";
 import { PiEyeSlashFill } from "react-icons/pi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Loginimage from "../../../public/loginImage04.jpg";
@@ -11,10 +11,96 @@ import NavbarLogin from "./navbar";
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
-  const Submit = (e) => {
+  let [error, setError] = useState({});
+  let [isSubmitted, setIsSubmitted] = useState(false);
+  let [inputData, setInputData] = useState({
+    email: "",
+    passward: "",
+  });
+  function handleInputs(e) {
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
+    let fieldError = validatefild(e.target.name, e.target.value);
+
+    console.log(fieldError);
+
+    if (fieldError) {
+      setError({ ...error, [e.target.name]: fieldError });
+    } else {
+      let newerror = { ...error };
+      delete newerror[e.target.name];
+      setError(newerror);
+    }
+  }
+
+  function validatefild(name, value) {
+    if (name == "email") {
+      if (inputData.email === "") {
+        return "Email is required !";
+      } else if (validateEmail(value) === false) {
+        return "invalid Email !";
+      }
+    }
+    if (name == "passward") {
+      if (inputData.passward === "") {
+        return "Passward is required !";
+      } else if (validatePassward(value) === false) {
+        return "Strong passward is required ! ";
+      }
+    }
+    return "";
+  }
+  //check Regex of email
+  function validateEmail(email) {
+    let emailRegex = /^[\w._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    return emailRegex.test(email);
+  }
+  //check Regex of Passward
+  function validatePassward(pass) {
+    let passwardRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwardRegex.test(pass);
+  }
+  // Handle error means apply validation Condition
+  function validateForm() {
+    let err = {};
+    //for Email apply condition
+
+    if (inputData.email === "") {
+      err.email = "Email is required !";
+    } else if (validateEmail(inputData.email) === false) {
+      err.email = "invalid Email !";
+    }
+
+    //for Passward apply condition
+    if (inputData.passward === "") {
+      err.passward = "Passward is required !";
+    } else if (validatePassward(inputData.passward) === false) {
+      err.passward = "Strong passward is required ! ";
+    }
+
+    return err;
+  }
+  // handle sumbit button
+  function Submit(e) {
     e.preventDefault();
-    console.log(e.target.value);
-  };
+    let handleError= validateForm()
+    setError(handleError);
+    Object.keys(error).length === 0
+      ? setIsSubmitted(true)
+      : setIsSubmitted(false);
+  }
+
+  //
+
+  console.log(error);
+  // check condition when form id successfully alidate then send data to backend by Sumbit button
+  useEffect(() => {
+    if (isSubmitted && Object.keys(error).length === 0) {
+      console.log(inputData);
+      setIsSubmitted(false);
+      setInputData({ email: "", passward: "" });
+    }
+  }, [error, isSubmitted]);
 
   return (
     <>
@@ -34,27 +120,36 @@ export default function Login() {
                 >
                   <Input
                     label="Email"
+                    name="email"
                     type="email"
+                    value={inputData.email}
                     isRequired
                     className="text-xl"
                     variant="underlined"
-                    color="secondary"
+                    color={"email" in error ? `danger` : `secondary`}
                     classNames={{
                       label: "text-gray-700 font-medium text-sm",
+                      inputWrapper: "focus-within:animate-blink  ",
                     }}
-                    onChange={Submit}
+                    onChange={(e) => handleInputs(e)}
                   />
+                  {error && (
+                    <p className="text-red-500  text-xs ">{error.email}</p>
+                  )}
                   <Input
                     className="w-full"
                     isRequired
+                    value={inputData.passward}
+                    name="passward"
                     classNames={{
-                      label: "text-gray-700 font-medium text-sm",
+                      label: "text-gray-700 font-medium text-sm ",
+                      inputWrapper: "focus-within:animate-blink  ",
                     }}
-                    onChange={Submit}
+                    onChange={(e) => handleInputs(e)}
                     endContent={
                       <button
                         aria-label="toggle password visibility"
-                        className="focus:outline-solid outline-transparent"
+                        className="focus:outline-solid outline-transparent "
                         type="button"
                         onClick={toggleVisibility}
                       >
@@ -66,10 +161,13 @@ export default function Login() {
                       </button>
                     }
                     label="Password"
-                    color="secondary"
+                    color={"passward" in error ? `danger` : `secondary`}
                     type={isVisible ? "text" : "password"}
                     variant="underlined"
                   />
+                  {error && (
+                    <p className="text-red-500 text-xs ">{error.passward}</p>
+                  )}
                   <Link
                     href="#"
                     className="text-xs mt-2 text-indigo-500 underline"
@@ -86,7 +184,7 @@ export default function Login() {
                 </Form>
               </div>
               <div className="flex flex-col mt-18 relative space-y-4 ">
-                <p className="text-center text-xs absolute top-[-8px] bg-purple-100 px-3 left-25">
+                <p className="text-center text-xs absolute top-[-8px] bg-purple-100  left-[28%] right-[28%]">
                   New to ShopHub
                 </p>
                 <hr className="text-gray-500"></hr>
@@ -103,7 +201,7 @@ export default function Login() {
             </div>
           </div>
           <div className=" gap-3 sm:pt-4 md:pt-8 lg:pt-11 hidden  sm:flex bg-white sm:flex-col justify-between rounded-md">
-            <h1 className="text-4xl font-semibold text-zinc-700 px-7 ">
+            <h1 className="text-4xl font-semibold text-zinc-700 px-7 animate-bounce ">
               {" "}
               LOGIN
             </h1>

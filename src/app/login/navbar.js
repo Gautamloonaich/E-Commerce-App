@@ -10,7 +10,7 @@ import NextLink from "next/link";
 export default function NavbarLogin() {
   return (
     <>
-      <Navbar isBordered className=" h-[72px] fixed top-0  bg-white">
+      <Navbar isBordered className=" h-[72px] fixed top-0 backdrop-blur-md bg-white/70 border-white/10 shadow-md ">
         <NavbarContent className="flex  pr-3" justify="start">
           <NavbarBrand>
             <p className="font-bold  text-[1.25rem] sm:text-[1.5rem] leading-[2rem]  text-indigo-600">

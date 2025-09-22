@@ -8,10 +8,10 @@ export default function SearchBar() {
     <>
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white hidden sm:flex justify-center w-full items-center min-h-[440px] mt-[72px] ">
         <div className=" w-full max-w-[90%] flex flex-col justify-center items-center space-y-6 mb-5 ">
-          <h1 className=" text-4xl md:text-5xl lg:text-6xl font-bold mb-1.5rem text-center ">
+          <h1 className=" text-4xl animate-blink  duration-1000 md:text-5xl lg:text-6xl font-bold mb-1.5rem text-center ">
             Find Everything You Need
           </h1>
-          <p className="text-xl mb-2rem">
+          <p className="text-xl  mb-2rem">
             Discover amazing products at unbeatable prices
           </p>
           <div className="w-full  sm:max-w-[380px] md:max-w-[530px] lg:max-w-[700px] flex justify-center items-center flex-wrap   ">
@@ -28,12 +28,12 @@ export default function SearchBar() {
                 <Button
                   radius="full"
                   size="sm"
-                  className=" bg-[rgb(79,70,229)] mr-[-6px] min-w-[50px] md:min-w-[58px]  "
+                  className=" bg-[rgb(79,70,229)] shadow-md hover:scale-110 hover:shadow-lg transition-transform duration-300 mr-[-6px] min-w-[50px] md:min-w-[58px]  "
                 >
                   {<IoSearch className="font-bold  text-white" size={18} />}
                 </Button>
               }
-              className="rounded-4xl flex justify-between items-center bg-white ring-3 ring-transparent focus-within:ring-purple-400 text-black  border-0 "
+              className="rounded-4xl flex justify-between items-center bg-white/100 backdrop-blur-md  transform hover:scale-105   shadow-lg focus:ring-3 focus:outline-none transition-all duration-300 ring-3 ring-transparent focus-within:ring-purple-400 text-black  border-0 "
             />
           </div>
         </div>

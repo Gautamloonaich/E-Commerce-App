@@ -11,9 +11,7 @@ export default function Profile(){
            <div>
              <PersonalInformation/>
            </div>
-           <div className="mt-10 mb-10">
-              <AccountSettings/>
-           </div>
+           
            
         </div>
         <div className=" mx-auto px-4 sm:px-6 border-t-1 border-t-neutral-300 lg:px-8 py-8 sticked w-full bottom-0  ">
