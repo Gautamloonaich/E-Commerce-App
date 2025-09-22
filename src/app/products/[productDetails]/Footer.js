@@ -2,7 +2,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-export default function WishListFooter() {
+export default function ProductdetailFooter() {
   return (
     <>
       <div className=" relative  ">
@@ -14,28 +14,28 @@ export default function WishListFooter() {
                   ShopHub
                 </h1>
                 <p className="text-gray-300 opacity-75 mr-6 mb-4">
-                  Your trusted online shopping destination.
+                  Your trusted destination for premium electronics and
+                  accessories.
                 </p>
-                
               </div>
               <div className="w-[100%] md:w-[25%]">
                 <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 ">
                   Company
                 </h1>
                 <ul className="[&>*]:text-gray-300  [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>About </li>
-                  <li>Careers</li>
-                  <li>Press</li>
+                  <li>All Products </li>
+                  <li>New arrivals</li>
+                  <li>Best Seller</li>
+                  <li> Sale</li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">
                 <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 ">
                   Customer Service
-
                 </h1>
                 <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
                   <li>Contact Us</li>
-                     <li>Shipping Info</li>
+                  <li>Shipping Info</li>
                   <li>Returns</li>
                 </ul>
               </div>
@@ -43,7 +43,7 @@ export default function WishListFooter() {
                 <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 ">
                   Follow Us
                 </h1>
-               <div className="flex space-x-[16px]">
+                <div className="flex space-x-[16px]">
                   <FaFacebook
                     size={22}
                     className="text-gray-400  hover:text-white cursor-pointer"

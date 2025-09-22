@@ -8,10 +8,22 @@
 
 
 nav > header {
-  @apply px-6 sm:px-0 max-w-[100%] sm:max-w-[93%] md:max-w-[85%]  h-full
+  @apply px-6 sm:px-0 max-w-[100%] sm:max-w-[93%] md:max-w-[85%]  h-full gap-3.5 sm:gap-4
 } 
 
 div > input{
   @apply xl:pl-4 pl-2
 }
 
+nav > header>ul:nth-of-type(4){
+  @apply gap-4 sm:gap-4
+}
+
+header > ul > li > a[href="/categories"],
+header > ul > li > a[href="/products"],
+header > ul > li > a[href="/aboutSection"]{
+  @apply hidden lg:flex
+}
+/* header > ul> li:nth-of-type(3){
+  @apply hidden lg:flex;
+} */
