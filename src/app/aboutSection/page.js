@@ -10,6 +10,7 @@ import person4 from "../../../public/person-04.svg";
 import { RxLinkedinLogo } from "react-icons/rx";
 import { FaGithub } from "react-icons/fa6";
 import Images from "./addImage";
+import Link from "next/link";
 
 export default function aboutPage() {
   return (
@@ -52,7 +53,7 @@ export default function aboutPage() {
                 tirelessly to solve them.
               </p>
             </div>
-            <Images/>
+            <Images />
           </div>
         </div>
       </div>
@@ -69,9 +70,12 @@ export default function aboutPage() {
             </p>
           </div>
           <div className=" flex-col md:grid md:grid-cols-3 gap-8 space-y-8 md:space-y-0  ">
-            <div className="p-6 flex flex-col  items-center border-2 rounded-xl max-w-full bg-white border-neutral-200">
+            <div className="p-6 flex flex-col  shadow-[0px_0px_15px_rgba(115,115,115,0.6)] items-center  rounded-xl max-w-full bg-white ">
               <div className="flex justify-center items-center  mb-4 w-16 h-16 rounded-full bg-[rgb(17,24,39)]">
-                <FaLightbulb size={23} className="text-white" />
+                <FaLightbulb
+                  size={23}
+                  className="text-white animate-pulse duration-400"
+                />
               </div>
               <h1 className="text-xl text-neutral-900 text-center font-medium mb-3">
                 Innovation
@@ -81,9 +85,12 @@ export default function aboutPage() {
                 new technologies and creative approaches.
               </p>
             </div>
-            <div className="p-6 flex flex-col items-center border rounded-xl max-w-full bg-white border-neutral-200">
+            <div className="p-6 flex flex-col items-center shadow-[0px_0px_15px_rgba(115,115,115,0.6)]  rounded-xl max-w-full bg-white ">
               <div className="flex justify-center  items-center border-2 mb-4 w-16 h-16 rounded-full bg-[rgb(17,24,39)]">
-                <IoPeopleSharp size={23} className="text-white" />
+                <IoPeopleSharp
+                  size={23}
+                  className="text-white animate-pulse duration-400"
+                />
               </div>
               <h1 className="text-xl text-center text-neutral-900 font-medium mb-3">
                 Collaboration
@@ -93,9 +100,12 @@ export default function aboutPage() {
                 within our team and with our clients.
               </p>
             </div>
-            <div className="p-6 flex flex-col items-center border-2 rounded-xl max-w-full bg-white border-neutral-200">
+            <div className="p-6 flex flex-col items-center shadow-[0px_0px_15px_rgba(115,115,115,0.6)]  rounded-xl max-w-full bg-white ">
               <div className="flex  justify-center items-center  border mb-4  w-16 h-16  rounded-full bg-[rgb(17,24,39)]">
-                <FaStar size={23} className="text-white" />
+                <FaStar
+                  size={23}
+                  className="text-white animate-pulse duration-400"
+                />
               </div>
               <h1 className="text-xl text-center text-neutral-900 font-medium mb-3">
                 Excellence
@@ -122,7 +132,12 @@ export default function aboutPage() {
           </div>
           <div className=" flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 space-y-8 md-space-y-0">
             <div className="flex flex-col justify-center m-0 items-center  w-full">
-              <Image alt="Avatar" width={130} src={person1} className="mb-4" />
+              <Image
+                alt="Avatar"
+                width={130}
+                src={person1}
+                className="mb-4 border-2 border-neutral-200 transition-all hover:scale-115 duration-400   hover:border-purple-400 p-1 rounded-full"
+              />
               <h1 className="text-xl text-center text-neutral-900 font-normal">
                 Sarah Johnson
               </h1>
@@ -130,16 +145,21 @@ export default function aboutPage() {
               <div className="flex justify-center gap-2 mt-3 items-center">
                 <RxLinkedinLogo
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700"
                 />
                 <FaGithub
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700"
                 />
               </div>
             </div>
             <div className="flex flex-col justify-center m-0 items-center  w-full">
-              <Image alt="Avatar" width={130} src={person2} className="mb-4" />
+              <Image
+                alt="Avatar"
+                width={130}
+                src={person2}
+                className="mb-4 border-2 border-neutral-200 transition-all hover:scale-115 duration-400 hover:border-purple-400 p-1 rounded-full"
+              />
               <h1 className="text-xl text-center text-neutral-900 font-normal">
                 Michael Chen
               </h1>
@@ -147,33 +167,43 @@ export default function aboutPage() {
               <div className="flex justify-center mt-3 gap-2 items-center">
                 <RxLinkedinLogo
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700"
                 />
                 <FaGithub
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700"
                 />
               </div>
             </div>
             <div className="flex flex-col justify-center m-0 items-center  w-full">
-              <Image alt="Avatar" width={130} src={person3} className="mb-4" />
+              <Image
+                alt="Avatar"
+                width={130}
+                src={person3}
+                className="mb-4 border-2 border-neutral-200 transition-all hover:scale-115 duration-400 hover:border-purple-400 p-1 rounded-full"
+              />
               <h1 className="text-xl text-center text-neutral-900 font-normal">
                 Emily Rodriguez
               </h1>
               <p className="text-neutral-600 text-center">Head of Design</p>
-              <div className="flex justify-center mt-3 gap-2 items-center">
+              <div className="flex justify-center  mt-3 gap-2 items-center">
                 <RxLinkedinLogo
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700 "
                 />
                 <FaGithub
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700"
                 />
               </div>
             </div>
             <div className="flex flex-col justify-center m-0 items-center  w-full">
-              <Image alt="Avatar" width={130} src={person4} className="mb-4" />
+              <Image
+                alt="Avatar"
+                width={130}
+                src={person4}
+                className="mb-4 border-2 border-neutral-200 transition-all hover:scale-115 duration-400 hover:border-purple-400 p-1 rounded-full"
+              />
               <h1 className="text-xl text-center text-neutral-900 font-normal">
                 David Kim
               </h1>
@@ -181,11 +211,11 @@ export default function aboutPage() {
               <div className="flex justify-center mt-3 gap-2 items-center">
                 <RxLinkedinLogo
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700"
                 />
                 <FaGithub
                   size={20}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-neutral-500 cursor-pointer hover:text-neutral-700"
                 />
               </div>
             </div>
@@ -231,13 +261,19 @@ export default function aboutPage() {
           </div>
           <div className="flex item-center justify-center">
             <div className=" flex flex-col md:flex md:flex-row items-center justify-center gap-4 w-full md:max-w-[400px]">
-              <button className="bg-indigo-600 border  text-white px-8 py-3 w-full rounded-lg hover:bg-indigo-800">
+              <Link href="/login">
                 {" "}
-                Get Start
-              </button>
-              <button className="border border-neutral-300  text-neutral-700  w-full px-8 py-3 rounded-lg hover:bg-neutral-50">
-                Learn More
-              </button>
+                <button className="bg-indigo-600 border cursor-pointer bg-gradient-to-r from-indigo-400 to-indigo-700 active:scale-95 duration-300 text-white px-8 py-3 w-full rounded-lg hover:bg-indigo-800">
+                  {" "}
+                  Get Start
+                </button>{" "}
+              </Link>
+              <Link href="/aboutSection">
+                {" "}
+                <button className="border  border-neutral-300   cursor-pointer  active:scale-95 duration-300 text-neutral-700  w-full px-8 py-3 rounded-lg hover:bg-neutral-50">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

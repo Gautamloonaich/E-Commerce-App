@@ -11,7 +11,7 @@ export default function CategorieCard({
 }) {
   return (
     <>
-      <div className=" border-2 group  border-b-0  border-gray-200 shadow-[-0px_0px_5px_rgb(212,212,212)] hover:shadow-[-0px_0px_10px_rgb(115,115,115)] hover:border-0  hover:-translate-y-3 transition-all duration-300  flex flex-col h-full     ">
+      <div className=" border-2 group  border-b-0  border-gray-200 shadow-[-0px_0px_5px_rgb(212,212,212)] hover:shadow-[-0px_0px_10px_rgb(115,115,115)] hover:border-0  hover:-translate-y-1 sm:hover:-translate-y-3 transition-all duration-300  flex flex-col h-full     ">
         <div className="relative ">
           {" "}
           <Link href="/products">
@@ -44,9 +44,9 @@ export default function CategorieCard({
               Starting from {StartingPrice}
             </span>
             <Link href="/products">
-              <button className="group-hover:animate-bounce   cursor-pointer">
+              <button className="group-hover:animate-bounce  transition-all translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-300 cursor-pointer">
                 <FaArrowRightLong
-                  className=" size-[15px]   group:hover:scale-110 group-hover:text-purple-600 group-hover:scale-110 hover:duration-200 hover:transition-transform sm:size-[20px]"
+                  className=" size-[15px]   group:hover:scale-110 group-hover:text-purple-600  hover:duration-200 hover:transition-transform sm:size-[20px]"
                   size={20}
                 />
               </button>

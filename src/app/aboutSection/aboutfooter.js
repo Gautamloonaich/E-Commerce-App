@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -32,11 +33,11 @@ export default function AboutFooter() {
                 </div>
               </div>
               <div className="w-[100%] md:w-[25%]">
-                <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 ">
+                <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 cursor-pointer">
                   Company
                 </h1>
-                <ul className="[&>*]:text-gray-300  [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>About </li>
+                <ul className="[&>*]:text-gray-300  [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:cursor-pointer [&>*]:hover:opacity-100  [&>*]:mt-1.5">
+                  <li><Link href="/aboutSection">About</Link> </li>
                   <li>Careers</li>
                   <li>Press</li>
                 </ul>
@@ -45,17 +46,17 @@ export default function AboutFooter() {
                 <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 ">
                   Support
                 </h1>
-                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
+                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:cursor-pointer [&>*]:hover:opacity-100  [&>*]:mt-1.5">
                   <li>Help Center</li>
-                  <li>Contact Us</li>
-                  <li>Status</li>
+                  <li><Link href="/contact">Contact Us</Link></li>
+                  <li><Link href="/productCart">Status</Link></li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">
                 <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 ">
                   Legal
                 </h1>
-                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
+                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:cursor-pointer [&>*]:hover:opacity-100  [&>*]:mt-1.5">
                   <li>Privacy</li>
                   <li>Terms</li>
                   <li>Cookie Policy</li>

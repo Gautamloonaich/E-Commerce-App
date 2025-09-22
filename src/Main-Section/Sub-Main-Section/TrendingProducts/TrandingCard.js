@@ -19,7 +19,7 @@ export default function TrandingCard({
   }
   console.log(type);
   return (
-    <div className=" border-2 hover:border-0  md:w-50 lg:w-60  flex flex-col h-[263px] sm:h-[320px]  md:h-[330px] lg:h-[320px]  border-gray-200 shadow-[-2px_2px_5px_rgb(212,212,212)] hover:shadow-[-6px_6px_10px_rgb(115,115,115)] hover:-translate-y-3 transition-all duration-300  rounded-xl ">
+    <div className=" border-2 group hover:border-0  md:w-50 lg:w-60  flex flex-col h-[263px] sm:h-[320px]  md:h-[330px] lg:h-[320px]  border-gray-200 shadow-[-2px_2px_5px_rgb(212,212,212)] hover:shadow-[-6px_6px_10px_rgb(163,163,163)] sm:hover:shadow-[-6px_6px_10px_rgb(115,115,115)] hover:-translate-y-3 transition-all duration-300  rounded-xl ">
       <div className="relative ">
         {" "}
         <Link href="/products/1">
@@ -37,6 +37,8 @@ export default function TrandingCard({
             className="z-50"
             src={image}
           />
+           <div className="absolute inset-0 rounded-t-xl bg-gradient-to-tr from-indigo-300 to-pink-300 opacity-0 transition-opacity duration-500 group-hover:opacity-30"></div>
+
         </Link>
         <button
           onClick={() => setcolor(!color)}
@@ -93,7 +95,7 @@ export default function TrandingCard({
               {oldPrice}
             </span>
           </div>
-          <button className="bg-white  md:bg-indigo-600  hover:transition-transform hover:duration-300 hover:scale-130 md:hover:scale-110 group-hover:animate-pulse md:text-white px-2 flex  items-end  md:px-4 py-1 md:py-2 rounded-sm sm:rounded-md md:rounded-lg  transition-all duration-300 transform hover:-translate-y-1  ">
+          <button className="bg-white  opacity-0  group-hover:opacity-100 group-hover:translate-y-0  md:bg-gradient-to-br from-indigo-300 to-indigo-600 cursor-pointer hover:transition-transform hover:duration-300 hover:scale-130 md:hover:scale-110 group-hover:animate-pulse md:text-white px-2 flex  items-end  md:px-4 py-1 md:py-2 rounded-sm sm:rounded-md md:rounded-lg  transition-all duration-300 transform hover:-translate-y-1  ">
             <FaCartPlus
               size={17}
               className="hover:text-indigo-700 text-gray-600 md:text-white sm:hover:text-white "

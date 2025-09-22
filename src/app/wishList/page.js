@@ -75,15 +75,15 @@ export default function wishList() {
       off: "",
       type: "",
     },
-  ];    
+  ];
   return (
     <div className="w-full overflow-hidden">
       <div className="mt-[80px] w-full">
-        <div className=" pt-2 pb-30 sm:pb-20 px-2  sm:px-6 md:px-16 lg:px-18 xl:px-27 space-y-3 sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
+        <div className=" pt-4 pb-30 sm:pb-20 px-2  sm:px-6 md:px-16 lg:px-18 xl:px-27 space-y-3 sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
           <h1 className="font-bold text-[22px] mb-10 md:text-[26px] text-center lg:text-[30px] xl:text-[32px] ">
             WishList
           </h1>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  sm:gap-8 w-full m-0  h-full ">
+          <div className="grid grid-cols-2 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-5  sm:gap-10 w-full m-0  h-full ">
             {FavouratProducts.map((item, key) => {
               return (
                 <div key={key}>

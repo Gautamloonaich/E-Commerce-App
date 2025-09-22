@@ -1,3 +1,4 @@
+"use client";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -6,8 +7,11 @@ import { HiHome } from "react-icons/hi";
 import { IoSearch } from "react-icons/io5";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { RxAvatar } from "react-icons/rx";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <>
       <div className=" relative  ">
@@ -40,11 +44,17 @@ export default function Footer() {
                 <h1 className="text-[18px] font-semibold text-white mb-4 ">
                   Quick Links
                 </h1>
-                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>About Us</li>
-                  <li>Contact</li>
+                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:cursor-pointer [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
+                  <li>
+                    <Link href="/aboutSection">About Us</Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">Contact</Link>
+                  </li>
                   <li>FAQ</li>
-                  <li>Shipping</li>
+                  <li>
+                    <Link href="/productCart">Shipping</Link>
+                  </li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">
@@ -52,10 +62,18 @@ export default function Footer() {
                   Categories
                 </h1>
                 <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>Electronics</li>
-                  <li>Fashion</li>
-                  <li>Home & Garden</li>
-                  <li>Sports</li>
+                  <li>
+                    <Link href="/products">Electronics</Link>
+                  </li>
+                  <li>
+                    <Link href="/products">Fashion</Link>
+                  </li>
+                  <li>
+                    <Link href="/products">Home & Garden</Link>
+                  </li>
+                  <li>
+                    <Link href="/products">Sports</Link>
+                  </li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">
@@ -86,23 +104,35 @@ export default function Footer() {
         </div>
         <div className=" flex sm:hidden fixed bottom-0 border-t-1 bg-white border-gray-300 w-full">
           <div className="py-2 flex justify-around items-center w-full  [&>*]:text-xs [&>*]:text-gray-400 ">
-            <button className=" flex flex-col group [&>*]:group-hover:text-blue-600  justify-center items-center py-2 px-3 space-y-1">
+            <button
+              onClick={() => router.push("/")}
+              className=" cursor-pointer flex flex-col group [&>*]:group-hover:text-blue-600  justify-center items-center py-2 px-3 space-y-1"
+            >
               <HiHome size={24} className="" />
               <span className="font-medium ">Home</span>
             </button>
 
-            <button className=" flex flex-col group [&>*]:group-hover:text-blue-600 justify-center items-center py-2 px-3 space-y-1">
+            <button
+              onClick={() => router.push("/")}
+              className=" flex cursor-pointer flex-col group [&>*]:group-hover:text-blue-600 justify-center items-center py-2 px-3 space-y-1"
+            >
               <IoSearch size={24} />
               <span className="font-medium">Search</span>
             </button>
 
-            <button className=" flex flex-col group [&>*]:group-hover:text-blue-600 justify-center items-center py-2 px-3 space-y-1">
+            <button
+              onClick={() => router.push("/categories")}
+              className=" flex cursor-pointer flex-col group [&>*]:group-hover:text-blue-600 justify-center items-center py-2 px-3 space-y-1"
+            >
               <TfiMenuAlt size={24} />
 
               <span className="font-medium">Categories</span>
             </button>
 
-            <button className=" flex flex-col group [&>*]:group-hover:text-blue-600 justify-center items-center py-2 px-3 space-y-1">
+            <button
+              onClick={() => router.push("/profile")}
+              className=" flex  cursor-pointer flex-col group [&>*]:group-hover:text-blue-600 justify-center items-center py-2 px-3 space-y-1"
+            >
               <RxAvatar size={24} />
               <span className="font-medium">Profile</span>
             </button>

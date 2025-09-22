@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -37,22 +38,22 @@ export default function Productfooter() {
                 <h1 className="text-[18px] font-semibold text-white mb-4 ">
                   Quick Links
                 </h1>
-                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>About Us</li>
-                  <li>Contact</li>
+                <ul className="[&>*]:text-gray-300 [&>*]:cursor-pointer [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
+                  <li><Link href="/aboutSection">About Us</Link></li>
+                  <li><Link href="/contact">Contact</Link></li>
                   <li>FAQ</li>
-                  <li>Shipping</li>
+                  <li><Link href="/productCart">Shipping</Link></li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">
                 <h1 className="text-[18px] font-semibold text-white mb-4 ">
                   Categories
                 </h1>
-                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>Electronics</li>
-                  <li>Fashion</li>
-                  <li>Home & Garden</li>
-                  <li>Sports</li>
+                <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:cursor-pointer [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
+                  <li><Link href="/products">Electronics</Link></li>
+                  <li><Link href="/products">Fashion</Link></li>
+                  <li><Link href="/products">Home & Garden</Link></li>
+                  <li><Link href="/products">Sports</Link></li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">

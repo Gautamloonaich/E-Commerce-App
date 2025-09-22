@@ -17,11 +17,12 @@ export default function WishListCard({
   
   return (
     <>
-      <div className=" border-2 border-b-0 border-gray-200 flex rounded-lg sm:rounded-xl flex-col h-full hover:shadow-lg hover:shadow-gray-200   ">
-        <div className="relative ">
+      <div className=" border-1 group border-neutral-200 shadow-[0_0_8px_rgba(163,163,163,0.7)] sm:shadow-[0_0_15px_rgba(163,163,163,0.6)]    hover:border-indigo-200 hover:shadow-[0_0_8px_rgba(99,102,230,0.7)] sm:hover:shadow-[0_0_15px_rgba(99,102,230,0.6)]  hover:[transform:perspective(600px)_rotateY(6deg)_rotateX(3deg)]  transition-transform duration-300 ease-out hover:-translate-y-2  flex rounded-lg sm:rounded-xl flex-col h-full  p-0  ">
+        <div className="relative  ">
           {" "}
           <Image
             width="1"
+             isZoomed
             height="1"
             alt="product image"
             radius="none"
@@ -29,9 +30,11 @@ export default function WishListCard({
               wrapper: "z-0",
               img: "  object-cover rounded-t-lg md:rounded-t-xl w-full  h-[140px]  sm:h-[200px] md:[230px] ",
             }}
-            className="z-50"
+            className="z-50 cursor-pointer"
             src={image}
           />
+           <div className="absolute inset-0 rounded-t-md  sm:rounded-t-lg bg-gradient-to-tr from-indigo-400 to-pink-400 opacity-0 transition-opacity duration-500 group-hover:opacity-30"></div>
+          
          <button
             onClick={() => setcolor(!color)}
             className="absolute top-1.5 right-2 md:top-3 cursor-pointer md:right-4 "
@@ -40,8 +43,8 @@ export default function WishListCard({
               size={20}
               className={
                 color == true
-                  ? `hover:transition-transform hover:duration-300 size-3.5 md:size-5 text-red-600 hover:transform hover:scale-130`
-                  : `hover:transition-transform hover:duration-300 size-3.5 md:size-5 hover:transform hover:scale-170 text-gray-400`
+                  ? `hover:transition-transform hover:duration-300 size-3.5 md:size-5 animate-bounce duration-500 text-red-600 hover:transform hover:scale-130`
+                  : `hover:transition-transform hover:duration-300 size-3.5 md:size-5 hover:transform hover:scale-170  text-gray-400`
               }
             />
           </button>
@@ -49,7 +52,7 @@ export default function WishListCard({
             className={
               off?.length < 1
                 ? `hidden`
-                : `text-xs md:text-sm font-light md:font-normal border   rounded-xl border-red-500 absolute top-1 left-1 md:top-2 md:left-2 bg-red-500 text-white px-0.5 md:px-2  py-0 md:py-1`
+                : `text-xs md:text-sm font-light md:font-normal border transition-all animate-bounce duration-1000  rounded-xl border-red-500 absolute top-1 left-1 md:top-2 md:left-2 bg-red-500 text-white px-0.5 md:px-2  py-0 md:py-1`
             }
           >
             {off}
@@ -59,7 +62,7 @@ export default function WishListCard({
               type == "NEW"
                 ? `text-xs md:text-sm font-light md:font-normal  border rounded-xl border-green-500  absolute top-1 left-1 md:top-2 md:left-2 bg-green-500 text-white px-0.5 md:px-2  py-0 md:py-1`
                 : type == "SALE"
-                ? `text-xs md:text-sm font-light md:font-normal border rounded-xl border-blue-500  absolute top-1 left-1 md:top-2 md:left-2 bg-blue-500 text-white px-0.5 md:px-2  py-0 md:py-1`
+                ? `text-xs md:text-sm font-light md:font-normal border transition-all animate-bounce duration-1000 rounded-xl border-blue-500  absolute top-1 left-1 md:top-2 md:left-2 bg-blue-500 text-white px-0.5 md:px-2  py-0 md:py-1`
                 : type == "HOT"
                 ? `text-xs md:text-sm font-light md:font-normal border rounded-xl border-orange-500  absolute top-1 left-1 md:top-2 md:left-2 bg-orange-500 text-white px-0.5 md:px-2  py-0 md:py-1`
                 : "hidden"
@@ -86,7 +89,7 @@ export default function WishListCard({
                 {oldPrice}
               </span>
             </div>
-            <button className="bg-white  sm:bg-indigo-600  hover:transition-transform hover:duration-300 hover:scale-130 sm:hover:scale-110  sm:text-white px-2 flex  items-end  md:px-4 py-1 md:py-2 rounded-sm sm:rounded-md md:rounded-lg  ">
+            <button className="bg-white  sm:bg-indigo-600 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100  hover:transition-transform hover:duration-300 hover:scale-130 sm:hover:scale-110  sm:text-white px-2 flex  items-end  md:px-4 py-1 md:py-2 rounded-sm sm:rounded-md md:rounded-lg  ">
               <FaCartPlus
                 size={17}
                 className="hover:text-indigo-700 text-gray-600 sm:text-white sm:hover:text-white "

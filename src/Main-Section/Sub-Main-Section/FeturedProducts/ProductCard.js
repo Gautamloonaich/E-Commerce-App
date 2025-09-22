@@ -22,7 +22,7 @@ export default function Card({
   console.log(type);
   return (
     <>
-      <div className=" border-2  border-gray-200  shadow-[-1px_4px_5px_rgb(212,212,212)] hover:shadow-[-0px_0px_10px_rgb(64,64,64)] hover:border-0 group  transition-transform duration-300 hover:scale-105 animate-fade-in  rounded-xl ">
+      <div className=" border-2 group  border-gray-200   shadow-[-1px_4px_5px_rgb(212,212,212)] hover:shadow-[-0px_0px_10px_rgb(64,64,64)] hover:border-0 group  transition-transform duration-300 hover:scale-105 animate-fade-in hover:[transform:perspective(600px)_rotateX(6deg)] rounded-xl ">
         <div className="relative ">
           {" "}
            <Link href="/products/1">
@@ -40,6 +40,8 @@ export default function Card({
             className="z-50"
             src={image}
           />
+           <div className="absolute inset-0 bg-gradient-to-tr rounded-t-xl from-indigo-400 to-pink-400 opacity-0 transition-opacity duration-500 group-hover:opacity-30"></div>
+
           </Link>
           <button
             onClick={() => setcolor(!color)}
@@ -80,7 +82,7 @@ export default function Card({
         <div className="p-4">
           <p className="text-sm font-medium text-neutral-700">{brand}</p>
       <Link href="/products/1">  <p className="font-semibold cursor-pointer text-gray-900 mb-2">{productname}</p></Link> 
-          <span className="text-sm font-light">{rating}</span>
+          <p className="text-sm font-light transition-all -translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 duration-300  ">{rating}</p>
           <div className="flex flex-row justify-between mt-2 items-center">
             <div className="flex flex-row justify-start item-center space-x-2">
               <span className="text-2xl font-bold">{newPrice}</span>

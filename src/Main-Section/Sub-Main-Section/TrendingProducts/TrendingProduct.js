@@ -96,7 +96,7 @@ export default function TrendingProduct() {
             View All
           </button>
         </div>
-        <div className="flex flex-row items-center py-5 px-4 overflow-x-auto  overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
+        <div className="flex flex-row items-center py-5 px-2.5 sm:px-4 overflow-x-auto  overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
           {trandingData.map((item, key) => {
             return (
               <div key={key} >

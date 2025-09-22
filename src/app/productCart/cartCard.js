@@ -9,6 +9,7 @@ import { FaCcMastercard } from "react-icons/fa";
 import { FaCcPaypal } from "react-icons/fa";
 import { Button } from "@heroui/react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Cartcard({
   productImg,
@@ -35,18 +36,22 @@ export default function Cartcard({
       <div className="flex flex-col  px-2 py-6 sm:px-6  ">
         <div className="flex">
           <div className="shrink-0">
+            <Link href="/products/1">
             <Image
               src={productImg}
               width="100"
+              
               height="100"
               alt="Product image"
-              className="object-cover border-1 border-neutral-200  rounded-md size-20 sm:size-23"
+              className="object-cover  shadow-[0px_0px_6px_rgba(212,212,212,0.9)] transition-all cursor-pointer  hover:scale-105 duration-250 border-neutral-200  rounded-md size-20 sm:size-23"
             />
+            </Link>
           </div>
           <div className="flex flex-col ml-3 flex-1 items-start justify-start">
+            <Link href="/products/1">
             <h1 className="text-md sm:text-lg text-neutral-900">
               {productName}
-            </h1>
+            </h1></Link> 
             <p className="text-xs sm:text-sm text-neutral-600">
               Premium Quality Audio
             </p>
@@ -97,7 +102,7 @@ export default function Cartcard({
               <div className="flex gap-2 justify-center pr-3 items-center">
                 <button
                   onClick={handleDecrement}
-                  className="border rounded-sm border-neutral-300 p-0.5 cursor-pointer"
+                  className="border rounded-sm   border-neutral-300 p-0.5 cursor-pointer"
                 >
                   <GrFormSubtract
                     size={17}

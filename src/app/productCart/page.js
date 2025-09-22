@@ -168,12 +168,12 @@ export default function Cart() {
             </div>
 
             <div className="flex justify-between item-center  px-2 py-6 sm:px-6  border-t border-neutral-200 ">
-              <button className="flex flex-row cursor-pointer  text-sm  sm:text-md group items-center text-neutral-500 hover:text-neutral-900 gap-1 sm:gap-2 ">
+              <button className="flex flex-row cursor-pointer animate-bounce hover:animate-none active:scale-95 duration-300  text-sm  sm:text-md group items-center text-neutral-500 hover:text-neutral-900 gap-1 sm:gap-2 ">
                 <FaArrowLeftLong className=" " />
                 Continue Shopping
               </button>
 
-              <button className="flex gap-1 md:gap-2 text-sm  sm:text-md cursor-pointer text-neutral-500 hover:text-neutral-900 items-center">
+              <button className="flex gap-1 md:gap-2 text-sm  sm:text-md active:scale-95 duration-300  cursor-pointer text-neutral-500 hover:text-neutral-900 items-center">
                 <RiDeleteBin6Line className="" />
                 Clear Cart
               </button>
@@ -188,7 +188,7 @@ export default function Cart() {
           <h1 className="text-2xl text-neutral-900 mb-6">
             You might also like
           </h1>
-          <div className="flex flex-row items-center overflow-x-auto  overflow-y-hidden scrollbar-hide  gap-2 md:gap-6  ">
+          <div className="flex flex-row items-center overflow-x-auto px-5 py-5 overflow-y-hidden scrollbar-hide  gap-4 md:gap-6  ">
             {favourateProduct.map((item, key) => {
               return (
                 <div key={key} className="">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -22,8 +23,8 @@ export default function WishListFooter() {
                 <h1 className="text-[18px] font-semibold pl-1 text-white mb-4 ">
                   Company
                 </h1>
-                <ul className="[&>*]:text-gray-300  [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>About </li>
+                <ul className="[&>*]:text-gray-300  [&>*]:opacity-75  [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
+                  <li className="cursor-pointer"><Link href="/aboutSection">About</Link> </li>
                   <li>Careers</li>
                   <li>Press</li>
                 </ul>
@@ -34,8 +35,8 @@ export default function WishListFooter() {
 
                 </h1>
                 <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li>Contact Us</li>
-                     <li>Shipping Info</li>
+                  <li  className="cursor-pointer"><Link href="/contact">Contact Us</Link> </li>
+                     <li className="cursor-pointer"> <Link href="/productCart">Shipping Info</Link> </li>
                   <li>Returns</li>
                 </ul>
               </div>

@@ -65,7 +65,7 @@ export default function Categories() {
               <Filtercategorie />
             </div>
           </div>
-          <div className=" grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6  sm:gap-8 w-full m-0 mt-9 h-full ">
+          <div className=" grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  sm:gap-9 w-full m-0 mt-9 h-full ">
             {Categories.map((item, key) => {
               return (
                 <div key={key}>

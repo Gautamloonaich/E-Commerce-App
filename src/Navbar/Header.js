@@ -29,13 +29,13 @@ export default function Header() {
   const pathname = usePathname();
   console.log(pathname);
   const menuItems = [
+    "Home",
     "Profile",
-    "Dashboard",
     "About",
     "products",
+    "Categories",
     "Contacts",
     "My Settings",
-    "Help & Feedback",
     "Log Out",
   ];
   let navbar = ["/login", "/signin"];
@@ -111,9 +111,8 @@ export default function Header() {
                   description="Explor all sections"
                 >
                   <Link
-                   as={NextLink}
+                    as={NextLink}
                     href="/categories "
-
                     className={
                       pathname == "/categories"
                         ? `text-indigo-600 `
@@ -128,7 +127,7 @@ export default function Header() {
                   description="Best discounts available "
                 >
                   <Link
-                   as={NextLink}
+                    as={NextLink}
                     href="/products "
                     className={
                       pathname == "/products" ? `text-indigo-600` : `text-black`
@@ -159,7 +158,7 @@ export default function Header() {
 
             <NavbarItem className="hidden md:flex">
               <Link
-               as={NextLink}
+                as={NextLink}
                 className={
                   pathname === "/categories"
                     ? `text-[rgba(55,65,81,0.6 )] animate-bounce text-indigo-600 text-[18px] font-bold  `
@@ -174,7 +173,7 @@ export default function Header() {
             </NavbarItem>
             <NavbarItem className="hidden md:flex">
               <Link
-               as={NextLink}
+                as={NextLink}
                 className={
                   pathname === "/products"
                     ? `text-[rgba(55,65,81,0.6 )] animate-bounce text-indigo-600 text-[18px]  ml-5 font-bold  `
@@ -188,7 +187,7 @@ export default function Header() {
             </NavbarItem>
             <NavbarItem className="hidden md:flex">
               <Link
-               as={NextLink}
+                as={NextLink}
                 className={
                   pathname === "/aboutSection"
                     ? `text-[rgba(55,65,81,0.6 )] animate-bounce text-indigo-600 text-[18px]  ml-5 font-bold  `
@@ -221,9 +220,7 @@ export default function Header() {
               />
             </NavbarItem>
             <NavbarItem>
-              <Link 
-               as={NextLink}
-              href="/wishList">
+              <Link as={NextLink} href="/wishList">
                 {" "}
                 <FaHeart
                   size={20}
@@ -236,63 +233,65 @@ export default function Header() {
               </Link>
             </NavbarItem>
             <NavbarItem>
-               <Link 
-               as={NextLink}
-              href="/productCart">
-              <FaCartShopping
-                size={21}
-                className=
-                {
-                  pathname == "/productCart"
+              <Link as={NextLink} href="/productCart">
+                <FaCartShopping
+                  size={21}
+                  className={
+                    pathname == "/productCart"
                       ? `ml-0 sm:ml-3 w-[19px] animate-bounce sm:w-[22px] text-indigo-600  `
                       : `ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:scale-90 hover:duration-400 hover:text-indigo-600 text-gray-600`
-                  
-                }
-              />
+                  }
+                />
               </Link>
             </NavbarItem>
 
-            {/* <Dropdown placement="bottom-end">
-            <DropdownTrigger>
-              <Avatar
-                isBordered
-                as="button"
-                className="transition-transform ml-3 mr-2.5 hidden sm:flex"
-                color="secondary"
-                name="Jason Hughes"
-                size="sm"
-                src="/avatar.png"
-              />
-            </DropdownTrigger>
-            <DropdownMenu aria-label="Profile Actions" variant="flat">
-              <DropdownItem key="profile" className="h-14 gap-2">
-                <p className="font-semibold">Signed in as</p>
-                <p className="font-semibold text-green-600">
-                  gautamloonaich5822@gmail.com
-                </p>
-              </DropdownItem>
-              <DropdownItem color="primary" key="settings" className="">
-                My Settings
-              </DropdownItem>
-              <DropdownItem color="primary" key="team_settings">
-                Team Settings
-              </DropdownItem>
-              <DropdownItem color="primary" key="system">
-                Contacts
-              </DropdownItem>
-              <DropdownItem color="primary" key="help_and_feedback">
-                Help & Feedback
-              </DropdownItem>
-              <DropdownItem
-                key="logout"
-                color="danger"
-                className="text-red-600"
-              >
-                Log Out
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown> */}
-            <NavbarItem>
+            <Dropdown placement="bottom-end">
+              <DropdownTrigger>
+                <Avatar
+                  isBordered
+                  as="button"
+                  className="transition-transform ml-3 mr-2.5 hidden sm:flex"
+                  color="secondary"
+                  name="Jason Hughes"
+                  size="sm"
+                  src="/avatar.png"
+                />
+              </DropdownTrigger>
+              <DropdownMenu aria-label="Profile Actions" variant="flat">
+                <DropdownItem key="profile" className="h-14 gap-2">
+                  <p className="font-semibold">Signed in as</p>
+                  <p className="font-semibold text-green-600">
+                    gautamloonaich5822@gmail.com
+                  </p>
+                </DropdownItem>
+                <DropdownItem color="primary" key="settings" className="">
+                  <Link as={NextLink} color="default" href="/profile">
+                    My Settings
+                  </Link>
+                </DropdownItem>
+
+                <DropdownItem color="primary" key="system">
+                  <Link as={NextLink} color="default" href="/contact">
+                    Contacts
+                  </Link>
+                </DropdownItem>
+                <DropdownItem color="primary" key="help_and_feedback">
+                  <Link as={NextLink} color="default" href="/profile">
+                    Profile
+                  </Link>
+                </DropdownItem>
+                <DropdownItem
+                  key="logout"
+                  color="danger"
+                  className="text-red-600"
+                >
+                  <Link as={NextLink} color="danger" href="/login">
+                    Log Out
+                  </Link>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+            {/* <NavbarItem>
               <Button
                as={NextLink}
                 color="secondary"
@@ -302,7 +301,7 @@ export default function Header() {
               >
                 Login
               </Button>
-            </NavbarItem>
+            </NavbarItem> */}
           </NavbarContent>
 
           <NavbarMenu>
@@ -317,8 +316,23 @@ export default function Header() {
                       ? "danger"
                       : "foreground"
                   }
-                   as={NextLink}
-                  href="#"
+                  as={NextLink}
+                  href={
+                    item==="Home"? "/" :
+                    item === "Profile"
+                      ? "/profile"
+                      : item === "About"
+                      ? "/aboutSection"
+                      : item === "products"
+                      ? "/products"
+                      :item === "Categories" ?
+                      "/categories" :
+                       item === "Contacts" 
+                      ? "/contact"
+                      : item === "My Settings"
+                      ? "/profile" 
+                      : "/login"
+                  }
                   size="lg"
                 >
                   {item}
