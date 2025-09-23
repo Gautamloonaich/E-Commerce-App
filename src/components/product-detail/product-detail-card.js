@@ -63,8 +63,8 @@ export default function ProductDetailCard() {
         ? setindex(index === lastindex)
         : setindex(index + 1)
       : index == 0
-      ? setindex((index = 0))
-      : setindex(index - 1);
+        ? setindex((index = 0))
+        : setindex(index - 1);
     //setindex(Math.min(index+1,lastindex))
     //setindex(Math.max(index-1,0))
   }
@@ -200,15 +200,14 @@ export default function ProductDetailCard() {
                   <div key={key} className=" flex gap-2">
                     <button
                       className={`w-7 sm:w-9 h-7 sm:h-9 
-                                        ${
-                                          item == "color1"
-                                            ? "bg-blue-900"
-                                            : item == "color2"
-                                            ? "bg-white"
-                                            : item == "color3"
-                                            ? "bg-black"
-                                            : "bg-green-700"
-                                        }
+                                        ${item == "color1"
+                          ? "bg-blue-900"
+                          : item == "color2"
+                            ? "bg-white"
+                            : item == "color3"
+                              ? "bg-black"
+                              : "bg-green-700"
+                        }
                                         rounded-full border border-neutral-300 cursor-pointer`}
                     ></button>
                   </div>

@@ -1,6 +1,6 @@
 "use client";
 import { Select, SelectItem } from "@heroui/react";
-export default function Productfilter() {
+export default function ProductFilter() {
   const filterproduct = [
     [
       { key: "Any Price", label: "Any Price" },
@@ -35,11 +35,11 @@ export default function Productfilter() {
     { key: "Price: High to Low", label: "Price: High to Low" },
     { key: "Customer Rating", label: "Customer Rating" },
     { key: "Newest", label: "Newest" },
-  ]; 
+  ];
 
   return (
-    
-   <div className=" sticky top-[72px] z-10 flex items-center justify-center">
+
+    <div className=" sticky top-[72px] z-10 flex items-center justify-center">
       <div className="py-2 mt-0  sm:mt-2.5 flex items-center justify-center rounded-0 sm:rounded-full  max-w-7xl w-full mx-0 sm:mx-4 md:mx-6 lg:mx-8 bg-neutral-400/20 backdrop-blur-md ">
         <div className=" w-[97%] sm:w-[92%] md:w-[87%] flex overflow-x-auto py-1  scrollbar-hide lg:overflow-x-hidden flex-row items-center justify-between">
           <div className="flex flex-col lg:flex-row gap-4 px-[24px] sm:px-[0px] ">
@@ -133,7 +133,7 @@ export default function Productfilter() {
               >
                 {sortBy.map((items, key) => {
                   return (
-                    <SelectItem key={key} value={items.id}  color="primary" className="rounded-full">
+                    <SelectItem key={key} value={items.id} color="primary" className="rounded-full">
                       {items.label}
                     </SelectItem>
                   );
@@ -143,8 +143,6 @@ export default function Productfilter() {
           </div>
         </div>
       </div>
-     </div>
-
-   
+    </div>
   );
 }

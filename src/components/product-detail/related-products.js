@@ -91,7 +91,7 @@ export default function Relatedproducts() {
           <h1 className="font-semibold text-xl sm:text-2xl  ">
             Related Product
           </h1>
-          
+
         </div>
         <div className="flex flex-row items-center overflow-x-auto  overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
           {trandingData.map((item, key) => {

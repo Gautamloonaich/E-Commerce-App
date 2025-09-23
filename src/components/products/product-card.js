@@ -3,18 +3,19 @@ import { Image } from "@heroui/react";
 import { useState } from "react";
 import { FaCartPlus, FaHeart } from "react-icons/fa6";
 
-export default function WishListCard({
+export default function ProductCard({
   image,
   productname,
   newPrice,
   oldPrice,
   off,
   type,
-}) {const [color, setcolor] = useState(false);
+}) {
+  const [color, setcolor] = useState(false);
   if (color == true) {
     console.log("liked item");
   }
-  
+
   return (
     <>
       <div className=" border-1 group border-neutral-200 shadow-[0_0_8px_rgba(163,163,163,0.7)] sm:shadow-[0_0_15px_rgba(163,163,163,0.6)]    hover:border-indigo-200 hover:shadow-[0_0_8px_rgba(99,102,230,0.7)] sm:hover:shadow-[0_0_15px_rgba(99,102,230,0.6)]  hover:[transform:perspective(600px)_rotateY(6deg)_rotateX(3deg)]  transition-transform duration-300 ease-out hover:-translate-y-2  flex rounded-lg sm:rounded-xl flex-col h-full  p-0  ">
@@ -22,7 +23,7 @@ export default function WishListCard({
           {" "}
           <Image
             width="1"
-             isZoomed
+            isZoomed
             height="1"
             alt="product image"
             radius="none"
@@ -33,9 +34,9 @@ export default function WishListCard({
             className="z-50 cursor-pointer"
             src={image}
           />
-           <div className="absolute inset-0 rounded-t-md  sm:rounded-t-lg bg-gradient-to-tr from-indigo-400 to-pink-400 opacity-0 transition-opacity duration-500 group-hover:opacity-30"></div>
-          
-         <button
+          <div className="absolute inset-0 rounded-t-md  sm:rounded-t-lg bg-gradient-to-tr from-indigo-400 to-pink-400 opacity-0 transition-opacity duration-500 group-hover:opacity-30"></div>
+
+          <button
             onClick={() => setcolor(!color)}
             className="absolute top-1.5 right-2 md:top-3 cursor-pointer md:right-4 "
           >
@@ -62,10 +63,10 @@ export default function WishListCard({
               type == "NEW"
                 ? `text-xs md:text-sm font-light md:font-normal  border rounded-xl border-green-500  absolute top-1 left-1 md:top-2 md:left-2 bg-green-500 text-white px-0.5 md:px-2  py-0 md:py-1`
                 : type == "SALE"
-                ? `text-xs md:text-sm font-light md:font-normal border transition-all animate-bounce duration-1000 rounded-xl border-blue-500  absolute top-1 left-1 md:top-2 md:left-2 bg-blue-500 text-white px-0.5 md:px-2  py-0 md:py-1`
-                : type == "HOT"
-                ? `text-xs md:text-sm font-light md:font-normal border rounded-xl border-orange-500  absolute top-1 left-1 md:top-2 md:left-2 bg-orange-500 text-white px-0.5 md:px-2  py-0 md:py-1`
-                : "hidden"
+                  ? `text-xs md:text-sm font-light md:font-normal border transition-all animate-bounce duration-1000 rounded-xl border-blue-500  absolute top-1 left-1 md:top-2 md:left-2 bg-blue-500 text-white px-0.5 md:px-2  py-0 md:py-1`
+                  : type == "HOT"
+                    ? `text-xs md:text-sm font-light md:font-normal border rounded-xl border-orange-500  absolute top-1 left-1 md:top-2 md:left-2 bg-orange-500 text-white px-0.5 md:px-2  py-0 md:py-1`
+                    : "hidden"
             }
           >
             {type}
