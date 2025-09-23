@@ -313,25 +313,25 @@ export default function Header() {
                     index === 2
                       ? "warning"
                       : index === menuItems.length - 1
-                      ? "danger"
-                      : "foreground"
+                        ? "danger"
+                        : "foreground"
                   }
                   as={NextLink}
                   href={
-                    item==="Home"? "/" :
-                    item === "Profile"
-                      ? "/profile"
-                      : item === "About"
-                      ? "/about"
-                      : item === "products"
-                      ? "/products"
-                      :item === "Categories" ?
-                      "/categories" :
-                       item === "Contacts" 
-                      ? "/contact"
-                      : item === "My Settings"
-                      ? "/profile" 
-                      : "/login"
+                    item === "Home" ? "/" :
+                      item === "Profile"
+                        ? "/profile"
+                        : item === "About"
+                          ? "/about"
+                          : item === "products"
+                            ? "/products"
+                            : item === "Categories" ?
+                              "/categories" :
+                              item === "Contacts"
+                                ? "/contact"
+                                : item === "My Settings"
+                                  ? "/profile"
+                                  : "/login"
                   }
                   size="lg"
                 >

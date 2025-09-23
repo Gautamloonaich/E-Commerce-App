@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providerhero from "@/provider-Hero-Ui/provide";
-import Header from "@/Navbar/Header";
+import Header from "@/components/header/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +23,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  overscroll-none`}
-      
+
       >
         <Providerhero>
-           <Header/>
+          <Header />
           {children}
-          </Providerhero>
+        </Providerhero>
       </body>
     </html>
   );
