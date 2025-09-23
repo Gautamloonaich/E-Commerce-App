@@ -18,20 +18,20 @@ export default function WishListCard({
         <div className="relative ">
           {" "}
           <Link href="/products/1">
-          <Image
-            width="1"
-            isZoomed
-            height="1"
-            alt="product image"
-            radius="none"
-            classNames={{
-              wrapper: "z-0",
-              img: "  object-cover w-full  h-[140px]  sm:h-[200px] md:[230px] ",
-            }}
-            className="z-50 cursor-pointer"
-            src={image}
-          />
-           </Link>
+            <Image
+              width="1"
+              isZoomed
+              height="1"
+              alt="product image"
+              radius="none"
+              classNames={{
+                wrapper: "z-0",
+                img: "  object-cover w-full  h-[140px]  sm:h-[200px] md:[230px] ",
+              }}
+              className="z-50 cursor-pointer"
+              src={image}
+            />
+          </Link>
           <button className="absolute top-1.5 md:top-3 right-2 md:right-4 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:animate-bounce -translate-y-7 group-hover:translate-y-0  cursor-pointer  ">
             <MdDelete
               size={23}
@@ -52,10 +52,10 @@ export default function WishListCard({
               type == "NEW"
                 ? `text-xs md:text-sm font-light md:font-normal  border rounded-xl border-green-500  absolute top-1 left-1 md:top-2 md:left-2 bg-green-500 text-white px-0.5 md:px-2  py-0 md:py-1`
                 : type == "SALE"
-                ? `text-xs md:text-sm font-light md:font-normal border rounded-xl animate-blink border-blue-500  absolute top-1 left-1 md:top-2 md:left-2 bg-blue-500 text-white px-0.5 md:px-2  py-0 md:py-1`
-                : type == "HOT"
-                ? `text-xs md:text-sm font-light md:font-normal border rounded-xl border-orange-500  absolute top-1 left-1 md:top-2 md:left-2 bg-orange-500 text-white px-0.5 md:px-2  py-0 md:py-1`
-                : "hidden"
+                  ? `text-xs md:text-sm font-light md:font-normal border rounded-xl animate-blink border-blue-500  absolute top-1 left-1 md:top-2 md:left-2 bg-blue-500 text-white px-0.5 md:px-2  py-0 md:py-1`
+                  : type == "HOT"
+                    ? `text-xs md:text-sm font-light md:font-normal border rounded-xl border-orange-500  absolute top-1 left-1 md:top-2 md:left-2 bg-orange-500 text-white px-0.5 md:px-2  py-0 md:py-1`
+                    : "hidden"
             }
           >
             {type}

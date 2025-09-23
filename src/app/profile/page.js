@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/footer";
 import ProfileForm from "../../components/profile/profile-form";
 import PersonalInformation from "../../components/profile/profile-form";
 
@@ -13,9 +14,10 @@ export default function Profile() {
           <ProfileForm />
         </div>
       </div>
-      <div className=" mx-auto px-4 sm:px-6 border-t-1 border-t-neutral-300 lg:px-8 py-8 sticked w-full bottom-0  ">
+      {/* <div className=" mx-auto px-4 sm:px-6 border-t-1 border-t-neutral-300 lg:px-8 py-8 sticked w-full bottom-0  ">
         <p className="text-center text-xs sm:text-sm text-neutral-600 ">© 2025 Profile Manager. All rights reserved.</p>
-      </div>
+      </div> */}
+      <Footer/>
     </>
   )
 }

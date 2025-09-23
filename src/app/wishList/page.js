@@ -1,8 +1,8 @@
 import Footer from "@/components/footer/footer";
-import WishListCard from "./wishListCard";
-import WishListFooter from "./wishListFooter";
+import WishListCard from "@/components/wishlist/wish-list-card";
 
 export default function wishList() {
+
   const FavouratProducts = [
     {
       image:
@@ -77,6 +77,7 @@ export default function wishList() {
       type: "",
     },
   ];
+
   return (
     <div className="w-full overflow-hidden">
       <div className="mt-[80px] w-full">
