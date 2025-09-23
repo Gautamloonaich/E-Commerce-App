@@ -1,4 +1,5 @@
-import AboutFooter from "../aboutSection/aboutfooter";
+
+import Footer from "@/components/footer/footer";
 import CategorieCard from "./categorieCard";
 import Filtercategorie, { Pagination, Paginationbar } from "./filter";
 
@@ -84,7 +85,7 @@ export default function Categories() {
       <div className="flex justify-center items-center mb-14 mt-4">
         <Paginationbar />
       </div>
-      <AboutFooter />
+      <Footer />
     </>
   );
 }

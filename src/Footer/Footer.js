@@ -46,7 +46,7 @@ export default function Footer() {
                 </h1>
                 <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:cursor-pointer [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
                   <li>
-                    <Link href="/aboutSection">About Us</Link>
+                    <Link href="/about">About Us</Link>
                   </li>
                   <li>
                     <Link href="/contact">Contact</Link>

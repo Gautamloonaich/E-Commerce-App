@@ -39,7 +39,7 @@ export default function Productfooter() {
                   Quick Links
                 </h1>
                 <ul className="[&>*]:text-gray-300 [&>*]:cursor-pointer [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li><Link href="/aboutSection">About Us</Link></li>
+                  <li><Link href="/about">About Us</Link></li>
                   <li><Link href="/contact">Contact</Link></li>
                   <li>FAQ</li>
                   <li><Link href="/productCart">Shipping</Link></li>
@@ -82,7 +82,7 @@ export default function Productfooter() {
             </p>
           </div>
         </div>
-        
+
       </div>
     </>
   );

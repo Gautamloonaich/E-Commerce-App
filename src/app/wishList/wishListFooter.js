@@ -24,7 +24,7 @@ export default function WishListFooter() {
                   Company
                 </h1>
                 <ul className="[&>*]:text-gray-300  [&>*]:opacity-75  [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li className="cursor-pointer"><Link href="/aboutSection">About</Link> </li>
+                  <li className="cursor-pointer"><Link href="/about">About</Link> </li>
                   <li>Careers</li>
                   <li>Press</li>
                 </ul>

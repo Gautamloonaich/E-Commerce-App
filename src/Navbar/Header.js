@@ -142,9 +142,9 @@ export default function Header() {
                 >
                   <Link
                     as={NextLink}
-                    href="/aboutSection"
+                    href="/about"
                     className={
-                      pathname == "/aboutSection"
+                      pathname == "/about"
                         ? `text-indigo-600`
                         : `text-black`
                     }
@@ -189,12 +189,12 @@ export default function Header() {
               <Link
                 as={NextLink}
                 className={
-                  pathname === "/aboutSection"
+                  pathname === "/about"
                     ? `text-[rgba(55,65,81,0.6 )] animate-bounce text-indigo-600 text-[18px]  ml-5 font-bold  `
                     : `text-[rgba(55,65,81,0.6 )] text-[18px] hover:scale-90 hover:duration-600 ml-5 font-medium cursor-pointer   hover:text-indigo-600 `
                 }
                 color="foreground"
-                href="/aboutSection"
+                href="/about"
               >
                 About
               </Link>
@@ -322,7 +322,7 @@ export default function Header() {
                     item === "Profile"
                       ? "/profile"
                       : item === "About"
-                      ? "/aboutSection"
+                      ? "/about"
                       : item === "products"
                       ? "/products"
                       :item === "Categories" ?

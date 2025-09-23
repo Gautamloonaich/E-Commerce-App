@@ -1,5 +1,4 @@
 import Image from "next/image";
-import AboutFooter from "./aboutfooter";
 import { FaLightbulb } from "react-icons/fa";
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaStar } from "react-icons/fa6";
@@ -9,10 +8,11 @@ import person3 from "../../../public/person-03.svg";
 import person4 from "../../../public/person-04.svg";
 import { RxLinkedinLogo } from "react-icons/rx";
 import { FaGithub } from "react-icons/fa6";
-import Images from "./addImage";
+import AboutSectionImages from "./about-sections-images";
 import Link from "next/link";
+import Footer from "@/components/footer/footer";
 
-export default function aboutPage() {
+export default function About() {
   return (
     <>
       <div className="py-[80px] flex item-center bg-neutral-50  h-[400px]    justify-center ">
@@ -53,7 +53,7 @@ export default function aboutPage() {
                 tirelessly to solve them.
               </p>
             </div>
-            <Images />
+            <AboutSectionImages />
           </div>
         </div>
       </div>
@@ -268,7 +268,7 @@ export default function aboutPage() {
                   Get Start
                 </button>{" "}
               </Link>
-              <Link href="/aboutSection">
+              <Link href="/about">
                 {" "}
                 <button className="border  border-neutral-300   cursor-pointer  active:scale-95 duration-300 text-neutral-700  w-full px-8 py-3 rounded-lg hover:bg-neutral-50">
                   Learn More
@@ -278,7 +278,7 @@ export default function aboutPage() {
           </div>
         </div>
       </div>
-      <AboutFooter />
+      <Footer />
     </>
   );
 }

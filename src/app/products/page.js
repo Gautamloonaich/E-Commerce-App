@@ -97,7 +97,7 @@ export default function products() {
               <Link href="/login">  <button className="bg-gradient-to-r from-neutral-600 to bg-neutral-950 text-white px-6 py-3 rounded-lg hover:bg-neutral-800 active:scale-90 cursor-pointer transition-all duration-300">
                   Shop Now
                 </button></Link>
-               <Link href="/aboutSection">   <button className="border border-neutral-300 text-neutral-700 px-6 py-3 rounded-lg hover:bg-neutral-50  active:scale-90 cursor-pointer transition-all duration-300">
+               <Link href="/about">   <button className="border border-neutral-300 text-neutral-700 px-6 py-3 rounded-lg hover:bg-neutral-50  active:scale-90 cursor-pointer transition-all duration-300">
                   Learn More
                 </button></Link>
               </div>

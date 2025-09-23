@@ -6,12 +6,12 @@ import image03 from "../../../public/aboutImage03.jpg"
 import image04 from "../../../public/aboutImage04.jpg"
 import Image from "next/image";
 
-export default function Images() {
+export default function AboutSectionImages() {
   let Comapnyimage = [
     image01,
     image02,
     image03,
-   image04,
+    image04,
   ];
   let [index, setindex] = useState(0);
   let [currentImage, setCurrentImage] = useState(Comapnyimage[index]);
@@ -33,7 +33,6 @@ export default function Images() {
         src={currentImage}
         className="h-80 sm:h-100 lg:h-80 max-w-full flex rounded-xl   object-cover "
       />
-      
     </div>
   );
 }

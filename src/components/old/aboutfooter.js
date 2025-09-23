@@ -37,7 +37,7 @@ export default function AboutFooter() {
                   Company
                 </h1>
                 <ul className="[&>*]:text-gray-300  [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:cursor-pointer [&>*]:hover:opacity-100  [&>*]:mt-1.5">
-                  <li><Link href="/aboutSection">About</Link> </li>
+                  <li><Link href="/about">About</Link> </li>
                   <li>Careers</li>
                   <li>Press</li>
                 </ul>
