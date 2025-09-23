@@ -1,7 +1,7 @@
 import Link from "next/link";
-import TrandingCard from "./TrandingCard";
+import TrandingProductCard from "../custom-card/trending-product-card";
 
-export default function TrendingProduct() {
+export default function TrendingProducts() {
   const trandingData = [
     {
       image:
@@ -101,7 +101,7 @@ export default function TrendingProduct() {
             return (
               <div key={key} >
               
-                <TrandingCard
+                <TrandingProductCard
                   image={item.image}
                   productname={item.Name}
                   newPrice={item.newPrice}

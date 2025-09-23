@@ -1,11 +1,18 @@
 
 import Footer from "@/components/footer/footer";
+import FeaturedProducts from "@/components/home/featured-products";
+import SearchBar from "@/components/home/search-bar";
+import ShopByCategory from "@/components/home/shop-by-category";
+import TrendingProducts from "@/components/home/trending-products";
 import MainContent from "@/Main-Section/MainContent";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="    ">
-      <MainContent />
+      <SearchBar />
+      <ShopByCategory/>
+      <TrendingProducts/>
+      <FeaturedProducts/>
       <Footer />
     </div>
   );
