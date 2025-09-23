@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Loginimage from "../../../public/loginImage04.jpg";
-import NavbarLogin from "../login/navbar";
 import { FaGreaterThan } from "react-icons/fa";
 import { NextLink } from "next/link";
+import PublicHeader from "@/components/header/PublicHeader";
 
 export default function Signin() {
   const [isVisible, setIsVisible] = useState(false);
@@ -131,7 +131,7 @@ export default function Signin() {
   }, [Error, isSumbiting]);
   return (
     <div className="h-full w-full">
-      <NavbarLogin />
+      <PublicHeader />
       <div className="w-full h-screen flex flex-col justify-center items-center pt-[72px] px-4 xs:px-8  sm:px-6 md:px-16 lg:px-18 xl:px-27 ">
         <h1 className=" text-3xl  w-full font-semibold text-zinc-700 flex  justify-center items-center sm:hidden  mt-0">
           Create Account

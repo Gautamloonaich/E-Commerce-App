@@ -7,7 +7,7 @@ import {
 } from "@heroui/react";
 import NextLink from "next/link";
 
-export default function NavbarLogin() {
+export default function PublicHeader() {
   return (
     <>
       <Navbar isBordered className=" h-[72px] fixed top-0 backdrop-blur-md bg-white/70 border-white/10 shadow-md ">
