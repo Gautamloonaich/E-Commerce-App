@@ -1,7 +1,7 @@
 "use client";
 import { Pagination } from "@heroui/react";
 import { Select, SelectItem } from "@heroui/react";
-export default function Filtercategorie() {
+export default function CategorieFilter() {
   return (
     <>
       <Select
@@ -49,23 +49,6 @@ export default function Filtercategorie() {
           Sort by: Most Products
         </SelectItem>
       </Select>
-    </>
-  );
-}
-
-export function Paginationbar() {
-  return (
-    <>
-      <Pagination
-        showControls
-        loop
-        showShadow
-        initialPage={1}
-        size="lg"
-        total={3}
-        classNames={{ wrapper: "gap-2 sm:gap-3" }}
-        className=""
-      />
     </>
   );
 }

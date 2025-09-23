@@ -8,9 +8,9 @@ import person3 from "../../../public/person-03.svg";
 import person4 from "../../../public/person-04.svg";
 import { RxLinkedinLogo } from "react-icons/rx";
 import { FaGithub } from "react-icons/fa6";
-import AboutSectionImages from "./about-sections-images";
 import Link from "next/link";
 import Footer from "@/components/footer/footer";
+import AboutSectionImages from "@/components/about/about-sections-images";
 
 export default function About() {
   return (

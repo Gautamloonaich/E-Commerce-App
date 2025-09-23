@@ -2,7 +2,7 @@ import Image from "next/image";
 import image from "../../../public/companyimage.jpg";
 import Productfilter from "./productFilter";
 import ProductCard from "./productCard";
-import { Paginationbar } from "../categories/filter";
+import { Paginationbar } from "../../components/categories/categorie-filter";
 import Productfooter from "./productFooter";
 import Link from "next/link";
 export default function products() {
