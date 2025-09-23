@@ -13,7 +13,7 @@ import {
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
 import { FaSortDown } from "react-icons/fa";
-export default function PersonalInformation() {
+export default function ProfileForm() {
   let [image, setimage] = useState();
 
   let inputFilds = [
