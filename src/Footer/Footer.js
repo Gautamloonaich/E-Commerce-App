@@ -53,7 +53,7 @@ export default function Footer() {
                   </li>
                   <li>FAQ</li>
                   <li>
-                    <Link href="/productCart">Shipping</Link>
+                    <Link href="/cart">Shipping</Link>
                   </li>
                 </ul>
               </div>

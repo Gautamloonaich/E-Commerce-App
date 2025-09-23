@@ -49,7 +49,7 @@ export default function AboutFooter() {
                 <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:cursor-pointer [&>*]:hover:opacity-100  [&>*]:mt-1.5">
                   <li>Help Center</li>
                   <li><Link href="/contact">Contact Us</Link></li>
-                  <li><Link href="/productCart">Status</Link></li>
+                  <li><Link href="/cart">Status</Link></li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">

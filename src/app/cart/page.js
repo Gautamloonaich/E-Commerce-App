@@ -1,9 +1,11 @@
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import Cartcard, { OrderSummary } from "./cartCard";
-import Wishcard from "./wishCart";
-import WishListFooter from "../wishList/wishListFooter";
+import Footer from "@/components/footer/footer";
+import SuggestionCard from "@/components/cart/suggestion-card";
+import { OrderSummary } from "@/components/cart/order-summary";
+import CartCard from "../../components/cart/cart-card";
 export default function Cart() {
+  
   const cartData = [
     {
       image:
@@ -130,6 +132,7 @@ export default function Cart() {
       type: "",
     },
   ];
+
   return (
     <>
       <div className="mt-[72px] max-w-[1380px] mx-auto px-4 sm:px-6 md:px-7 lg:px-8 py-8 overflow-hidden">
@@ -153,7 +156,7 @@ export default function Cart() {
                     key={key}
                     className="   shadow-[0_2px_4px_rgb(212,212,216)] "
                   >
-                    <Cartcard
+                    <CartCard
                       productImg={item.image}
                       productName={item.Name}
                       productNewPrice={item.newPrice}
@@ -192,7 +195,7 @@ export default function Cart() {
             {favourateProduct.map((item, key) => {
               return (
                 <div key={key} className="">
-                  <Wishcard
+                  <SuggestionCard
                     image={item.image}
                     productname={item.Name}
                     newPrice={item.newPrice}
@@ -206,7 +209,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
-      <WishListFooter />
+      <Footer />
     </>
   );
 }

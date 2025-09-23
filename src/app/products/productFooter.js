@@ -42,7 +42,7 @@ export default function Productfooter() {
                   <li><Link href="/about">About Us</Link></li>
                   <li><Link href="/contact">Contact</Link></li>
                   <li>FAQ</li>
-                  <li><Link href="/productCart">Shipping</Link></li>
+                  <li><Link href="/cart">Shipping</Link></li>
                 </ul>
               </div>
               <div className="w-[100%] md:w-[25%]">

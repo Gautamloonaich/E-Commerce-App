@@ -233,11 +233,11 @@ export default function Header() {
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link as={NextLink} href="/productCart">
+              <Link as={NextLink} href="/cart">
                 <FaCartShopping
                   size={21}
                   className={
-                    pathname == "/productCart"
+                    pathname == "/cart"
                       ? `ml-0 sm:ml-3 w-[19px] animate-bounce sm:w-[22px] text-indigo-600  `
                       : `ml-0 sm:ml-3 w-[17px] sm:w-[20px] hover:scale-90 hover:duration-400 hover:text-indigo-600 text-gray-600`
                   }

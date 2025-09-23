@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/footer";
 import WishListCard from "./wishListCard";
 import WishListFooter from "./wishListFooter";
 
@@ -101,7 +102,7 @@ export default function wishList() {
           </div>
         </div>
       </div>
-      <WishListFooter />
+      <Footer />
     </div>
   );
 }

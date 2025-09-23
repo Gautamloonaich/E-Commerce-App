@@ -36,7 +36,7 @@ export default function WishListFooter() {
                 </h1>
                 <ul className="[&>*]:text-gray-300 [&>*]:opacity-75 [&>*]:hover:text-white [&>*]:ml-1 [&>*]:hover:opacity-100  [&>*]:mt-1.5">
                   <li  className="cursor-pointer"><Link href="/contact">Contact Us</Link> </li>
-                     <li className="cursor-pointer"> <Link href="/productCart">Shipping Info</Link> </li>
+                     <li className="cursor-pointer"> <Link href="/cart">Shipping Info</Link> </li>
                   <li>Returns</li>
                 </ul>
               </div>

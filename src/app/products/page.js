@@ -2,9 +2,9 @@ import Image from "next/image";
 import image from "../../../public/companyimage.jpg";
 import Productfilter from "./productFilter";
 import ProductCard from "./productCard";
-import { Paginationbar } from "../../components/categories/categorie-filter";
 import Productfooter from "./productFooter";
 import Link from "next/link";
+import { Paginationbar } from "@/components/pagination/pagination-bar";
 export default function products() {
   const productData = [
     {
