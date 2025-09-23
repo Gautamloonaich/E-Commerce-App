@@ -1,4 +1,4 @@
-import TrandingCard from "@/Main-Section/Sub-Main-Section/TrendingProducts/TrandingCard";
+import TrendingProductCard from "../custom-card/trending-product-card";
 
 export default function Relatedproducts() {
   const trandingData = [
@@ -97,7 +97,7 @@ export default function Relatedproducts() {
           {trandingData.map((item, key) => {
             return (
               <div key={key}>
-                <TrandingCard
+                <TrendingProductCard
                   image={item.image}
                   productname={item.Name}
                   newPrice={item.newPrice}

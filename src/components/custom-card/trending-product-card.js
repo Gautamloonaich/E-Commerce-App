@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa6";
 
-export default function TrandingProductCard({
+export default function TrendingProductCard({
     image,
     productname,
     newPrice,
