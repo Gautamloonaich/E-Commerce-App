@@ -6,6 +6,7 @@ import { GoMail } from "react-icons/go";
 import { IoMdCall } from "react-icons/io";
 import { IoChatboxEllipses } from "react-icons/io5";
 import { useState } from "react";
+import Footer from "@/components/footer/footer";
 
 export default function Contact() {
   let [contact, setcontact] = useState({
@@ -125,11 +126,12 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className=" mx-auto mt-10 px-4 sm:px-6 border-t-1 border-t-neutral-300 lg:px-8 py-8 sticked w-full bottom-0  ">
+      {/* <div className=" mx-auto mt-10 px-4 sm:px-6 border-t-1 border-t-neutral-300 lg:px-8 py-8 sticked w-full bottom-0  ">
         <p className="text-center text-xs sm:text-sm text-neutral-600 ">
           © 2025 Profile Manager. All rights reserved.
         </p>
-      </div>
+      </div> */}
+      <Footer/>
     </>
   );
 }
