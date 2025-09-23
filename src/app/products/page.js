@@ -1,11 +1,12 @@
 import Image from "next/image";
 import image from "../../../public/companyimage.jpg";
-import Productfilter from "./productFilter";
-import ProductCard from "./productCard";
-import { Paginationbar } from "../categories/filter";
-import Productfooter from "./productFooter";
 import Link from "next/link";
+import { Paginationbar } from "@/components/pagination/pagination-bar";
+import ProductFilter from "../../components/products/product-filter";
+import ProductCard from "@/components/products/product-card";
+import Footer from "@/components/footer/footer";
 export default function products() {
+
   const productData = [
     {
       image:
@@ -80,6 +81,7 @@ export default function products() {
       type: "",
     },
   ];
+
   return (
     <>
       <div className="mt-[73px] flex justify-center  bg-neutral-50 min-h-[400px] items-center">
@@ -94,10 +96,10 @@ export default function products() {
                 options
               </p>
               <div className="flex  item-center justify-start gap-3">
-              <Link href="/login">  <button className="bg-gradient-to-r from-neutral-600 to bg-neutral-950 text-white px-6 py-3 rounded-lg hover:bg-neutral-800 active:scale-90 cursor-pointer transition-all duration-300">
+                <Link href="/login">  <button className="bg-gradient-to-r from-neutral-600 to bg-neutral-950 text-white px-6 py-3 rounded-lg hover:bg-neutral-800 active:scale-90 cursor-pointer transition-all duration-300">
                   Shop Now
                 </button></Link>
-               <Link href="/aboutSection">   <button className="border border-neutral-300 text-neutral-700 px-6 py-3 rounded-lg hover:bg-neutral-50  active:scale-90 cursor-pointer transition-all duration-300">
+                <Link href="/about">   <button className="border border-neutral-300 text-neutral-700 px-6 py-3 rounded-lg hover:bg-neutral-50  active:scale-90 cursor-pointer transition-all duration-300">
                   Learn More
                 </button></Link>
               </div>
@@ -111,7 +113,7 @@ export default function products() {
         </div>
       </div>
 
-      <Productfilter />
+      <ProductFilter />
 
 
       <div className=" pt-10 pb-35 sm:pb-20  px-3 md:px-16 lg:px-18 xl:px-27 space-y-4 sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
@@ -119,7 +121,7 @@ export default function products() {
           Search Results
 
         </h1>
-         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  sm:gap-10 w-full m-0  h-full ">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  sm:gap-10 w-full m-0  h-full ">
           {productData.map((item, key) => {
             return (
               <div key={key}>
@@ -136,10 +138,10 @@ export default function products() {
           })}
         </div>
         <div className="text-center  pt-7">
-         <div className="flex justify-center mt-12 items-center"> <Paginationbar/></div>
+          <div className="flex justify-center mt-12 items-center"> <Paginationbar /></div>
         </div>
       </div>
-      <Productfooter/>
+      <Footer />
     </>
   );
 }

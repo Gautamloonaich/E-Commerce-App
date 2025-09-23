@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Loginimage from "../../../public/loginImage04.jpg";
-import NavbarLogin from "./navbar";
+import PublicHeader from "@/components/header/PublicHeader";
 
 export default function Login() {
   const [isVisible, setIsVisible] = useState(false);
@@ -83,7 +83,7 @@ export default function Login() {
   // handle sumbit button
   function Submit(e) {
     e.preventDefault();
-    let handleError= validateForm()
+    let handleError = validateForm()
     setError(handleError);
     Object.keys(error).length === 0
       ? setIsSubmitted(true)
@@ -104,7 +104,7 @@ export default function Login() {
 
   return (
     <>
-      <NavbarLogin />
+      <PublicHeader />
       <div className="w-full h-screen flex flex-col justify-center items-center px-4 xs:px-8  sm:px-6 md:px-16 lg:px-18 xl:px-27 ">
         <h1 className=" text-3xl  w-full font-semibold text-zinc-700 flex  justify-center items-center sm:hidden  mt-5">
           LOGIN

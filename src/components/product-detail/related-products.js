@@ -1,9 +1,7 @@
-import Footer from "@/components/footer/footer";
-import WishListCard from "@/components/wishlist/wish-list-card";
+import TrendingProductCard from "../custom-card/trending-product-card";
 
-export default function wishList() {
-
-  const FavouratProducts = [
+export default function Relatedproducts() {
+  const trandingData = [
     {
       image:
         "https://storage.googleapis.com/uxpilot-auth.appspot.com/66a2a08b7c-17eb51abc028f0e44277.png",
@@ -76,34 +74,45 @@ export default function wishList() {
       off: "",
       type: "",
     },
+    {
+      image:
+        "https://storage.googleapis.com/uxpilot-auth.appspot.com/59559f2884-ab96162409c103926261.png",
+      Name: "Smartphone Pro",
+      newPrice: "$699.99",
+      oldPrice: "",
+      off: "",
+      type: "",
+    },
   ];
-
   return (
-    <div className="w-full overflow-hidden">
-      <div className="mt-[80px] w-full">
-        <div className=" pt-4 pb-30 sm:pb-20 px-2  sm:px-6 md:px-16 lg:px-18 xl:px-27 space-y-3 sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
-          <h1 className="font-bold text-[22px] mb-10 md:text-[26px] text-center lg:text-[30px] xl:text-[32px] ">
-            WishList
+    <>
+      <div className="   space-y-3   sm:space-y-4 md:spce-y-5 lg:space-y-6 xl:space-y-8">
+        <div className="flex flex-row justify-between items-center">
+          <h1 className="font-semibold text-xl sm:text-2xl  ">
+            Related Product
           </h1>
-          <div className="grid grid-cols-2 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-5  sm:gap-10 w-full m-0  h-full ">
-            {FavouratProducts.map((item, key) => {
-              return (
-                <div key={key}>
-                  <WishListCard
-                    image={item.image}
-                    productname={item.Name}
-                    newPrice={item.newPrice}
-                    oldPrice={item.oldPrice}
-                    off={item.off}
-                    type={item.type}
-                  />
-                </div>
-              );
-            })}
-          </div>
+
+        </div>
+        <div className="flex flex-row items-center overflow-x-auto  overflow-y-hidden scrollbar-hide w-full gap-2 md:gap-6  ">
+          {trandingData.map((item, key) => {
+            return (
+              <div key={key}>
+                <TrendingProductCard
+                  image={item.image}
+                  productname={item.Name}
+                  newPrice={item.newPrice}
+                  oldPrice={item.oldPrice}
+                  off={item.off}
+                  type={item.type}
+                />
+              </div>
+            );
+          })}
+          <button className="text-white px-3 md:px-4  border rounded-lg flex justify-center items-center hover:transition-transform hover:scale-105 hover:duration-250 h-[30px] md:h-[40px] bg-indigo-600 text-sm md:text-lg">
+            More
+          </button>
         </div>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }

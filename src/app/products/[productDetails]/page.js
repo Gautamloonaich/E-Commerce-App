@@ -1,9 +1,9 @@
-import ProductSummary from "./productSummary";
-import ProductDetailCard from "./productDetailCard";
-import Relatedproducts from "./relatedProducts";
-import ProductdetailFooter from "./Footer";
+import Footer from "@/components/footer/footer";
+import ProductDetailCard from "@/components/product-detail/product-detail-card";
+import ProductSummary from "@/components/product-detail/product-summary";
+import Relatedproducts from "@/components/product-detail/related-products";
 export default function ProductDetail() {
- 
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-[72px] overflow-hidden">
@@ -18,22 +18,19 @@ export default function ProductDetail() {
             <li className="">iphone 15 pro</li>
           </ul>
         </div>
-         <div className="mt-6">
-         <ProductDetailCard/>
-         </div>
-         <div className="mt-10 ">
-          <ProductSummary/>
-         </div>
-         <div className="my-10 sm:my-15">
-          <Relatedproducts/>
-         </div>
-         
-        
-
+        <div className="mt-6">
+          <ProductDetailCard />
+        </div>
+        <div className="mt-10 ">
+          <ProductSummary />
+        </div>
+        <div className="my-10 sm:my-15">
+          <Relatedproducts />
+        </div>
       </div>
-       <div>
-          <ProductdetailFooter/>
-         </div>
+      <div>
+        <Footer />
+      </div>
     </>
   );
 }

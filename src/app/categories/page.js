@@ -1,6 +1,8 @@
-import AboutFooter from "../aboutSection/aboutfooter";
-import CategorieCard from "./categorieCard";
-import Filtercategorie, { Pagination, Paginationbar } from "./filter";
+
+import Footer from "@/components/footer/footer";
+import CategorieCard from "@/components/categories/categorie-card";
+import { Paginationbar } from "@/components/pagination/pagination-bar";
+import CategorieFilter from "@/components/categories/categorie-filter";
 
 export default function Categories() {
   const Categories = [
@@ -62,7 +64,7 @@ export default function Categories() {
               Showing 24 categories
             </p>
             <div>
-              <Filtercategorie />
+              <CategorieFilter />
             </div>
           </div>
           <div className=" grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  sm:gap-9 w-full m-0 mt-9 h-full ">
@@ -84,7 +86,7 @@ export default function Categories() {
       <div className="flex justify-center items-center mb-14 mt-4">
         <Paginationbar />
       </div>
-      <AboutFooter />
+      <Footer />
     </>
   );
 }
